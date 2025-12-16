@@ -1,0 +1,185 @@
+/* General Styles */
+.trainer-profile {
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 20px;
+  background-color: #fff;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  border-radius: 8px;
+  font-family: 'Inter', sans-serif;
+  color: #333;
+}
+
+.header-container {
+  display: flex;
+  align-items: center;
+  gap: 100px;
+  margin-bottom: 20px;
+}
+
+.profile-pic-container {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 20px;
+}
+
+.profile-pic {
+  width: 150px;
+  height: 150px;
+  border-radius: 50%;
+  border: 2px solid #570303;
+  object-fit: cover;
+  margin-left: 40px;
+}
+
+/* Updated Trainer Details Section */
+.trainer-details {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 5px;
+  color: white;
+  text-align: center;
+  margin-top: 10px;
+}
+
+.trainer-name {
+  font-size: 2rem;
+  font-weight: bold;
+  color: white;
+}
+
+
+
+/* Rating */
+.rating {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 5px;
+  margin-top: -35px;
+}
+
+.rating-value {
+  font-size: 1.5rem;
+  font-weight: bold;
+  color: gold;
+}
+
+.rating-star {
+  font-size: 1.5rem;
+  color: gold;
+}
+
+/* Remove old positioning */
+.rating-section {
+padding-top: -5px;  text-align: center;
+}
+
+.contact{
+  margin-left: 220px;
+}
+
+.contact p {
+  color: white;
+}
+
+.biography h2 {
+  font-size: 1.2rem;
+  margin-bottom: 10px;
+  color: white;
+}
+
+.biography p {
+  font-size: 14px;
+  line-height: 1.6;
+  color: rgb(177, 177, 177);
+  font-weight: bold;
+}
+
+.biography {
+  flex: 1;
+}
+
+.specializations-certifications {
+  flex: 0.5;
+}
+
+.specializations h2 {
+  font-size: 1.2rem;
+  margin-bottom: 10px;
+  color: white;
+}
+
+.specialization-grid {
+  display: flex;
+  gap: 8px;
+  flex-wrap: wrap;
+  font-size: 14px;
+  color: rgb(177, 177, 177);
+  font-weight: bold;
+}
+
+.certifications {
+  margin-top: 10px;
+}
+
+.certifications h2 {
+  color: white;
+  font-size: 1.2rem;
+}
+
+.certificate-image-container {
+  margin-top: 12px;
+}
+
+.certificate-image {
+  width: 120px;
+  height: 80px;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.bottom-container {
+  display: flex;
+  gap: 120px;
+  margin-top: 10px;
+}
+
+.choose-package {
+  text-align: start;
+  margin-top: 100px;
+}
+
+.choose-package-button {
+  width: 200px;
+  background-color: #570303;
+  color: white;
+  margin-left: 400px;
+  cursor: pointer;
+  position: relative;
+  bottom: 45px;
+}
+
+.choose-package-button:hover {
+  background-color: white;
+  color: #570303;
+}
+
+.go-back-button {
+  position: absolute;
+  top: 20px;
+  right: 30px;
+  font-size: 10px;
+  cursor: pointer;
+  padding: 10px;
+  width: 20px;
+  color: white;
+  background-color: #570303;
+}
+
+.go-back-button:hover {
+  color: #570303;
+  background-color: white;
+}

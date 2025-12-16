@@ -1,0 +1,120 @@
+/* Top Navigation Bar */
+.adminnav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background: transparent; /* Red Transparent Background */
+    padding: 10px 20px;
+    color: white;
+    position: relative;
+    width: 100%;
+  }
+  
+  /* Left Side: Completed Workouts & Days Remaining */
+  .sub {
+    display: flex;
+    position: relative;
+    font-size: 14px;
+    font-weight: bold;
+    left: 200px;
+    cursor:pointer;
+  }
+  
+  .active-subscribe {
+    background: white;
+    color: black;
+    padding: 5px 10px;
+    border-radius: 15px;
+    position: relative;
+    left: 25px;
+  }
+  
+  .number-of-users{
+    background: #d80202;
+    color: white;
+    padding: 5px 10px;
+    border-radius: 15px;
+    width: 170px;
+    text-align-last: right;
+  }
+  
+  /* Right Side: Notifications & Profile */
+  .adminnav-right {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    position: relative;
+    right: 10px;
+  }
+  
+  /* Notification Bell */
+  .notification-icon {
+    position: relative;
+    cursor: pointer;
+    color: #d80202;
+  }
+  .notification-icon:hover {
+    transform: scale(1.2);
+  }
+  .notification-icon .notification-badge {
+    position: absolute;
+    top: -5px;
+    right: -5px;
+    font-size: 12px;
+    font-weight:bolder;
+    border-radius: 50%;
+    padding: 3px 6px;
+  }
+  
+  /* Notifications Panel */
+  .notifications-panel {
+    position: absolute;
+    top: 60px;
+    right: 10px;
+    background: rgba(255, 255, 255, 0.9);
+    color: black;
+    border-radius: 10px;
+    padding: 10px;
+    width: 250px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+    z-index: 10;
+  }
+  
+  .notifications-panel h4 {
+    font-size: 16px;
+    margin-bottom: 10px;
+  }
+  
+  .notification-item {
+    background: rgba(255, 0, 0, 0.1);
+    padding: 8px;
+    border-radius: 5px;
+    margin-bottom: 5px;
+  }
+  
+  .view-more-btn {
+    width: 100%;
+    padding: 5px;
+    background: #d80202;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+  }
+  
+  /* Profile Dropdown */
+  .profile-btn {
+    display: inline-block;
+    background: #d80202;
+    color: white;
+    padding: 10px 20px;
+    text-decoration: none;
+    border-radius: 15px;
+    font-size: 14px;
+    font-weight: bold;
+  }
+  .profile-btn:hover {
+    background: grey;
+    color: white;
+    transform: scale(1.05);
+  }

@@ -1,0 +1,284 @@
+/* General Styles */
+body {
+  margin: 0;
+  font-family: 'Inter', sans-serif;
+  background-color: #f4f4f4;
+  color: black;
+}
+
+.trainee-dash {
+  display: flex;
+  min-height: 100vh;
+  position: relative;
+  background-image: url("../assets/Footer.jpg");
+  background-size: cover;
+  background-position: center;
+}
+
+/* Background Overlay */
+.background-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.5);
+  z-index: 0;
+  backdrop-filter: blur(10px);
+}
+
+/* Main Content */
+.main-content {
+  margin-left: 250px;
+  flex: 1;
+  padding: 16px;
+  position: relative;
+  z-index: 1;
+}
+
+/* Feedback Container */
+.traineefeedback-container {
+  background-color: #a00000;
+  backdrop-filter: blur(10px);
+  padding: 24px;
+  margin-top: 16px;
+  height: 520px;
+    width: 1050px;
+}
+
+/* Rating Display Section */
+.header-section {
+  display: flex;
+  justify-content: space-between;
+  color: white;
+}
+
+.rating-display {
+  display: flex;
+  gap: 60px;
+  position: relative;
+  left: 370px;
+}
+
+.overall-rating {
+  text-align: center;
+}
+
+.rating-value {
+  font-size: 48px;
+  font-weight: bold;
+}
+
+.stars-overall .filled {
+  color: gold;
+}
+
+.stars-overall .empty {
+  color: white;
+}
+
+.rating-count {
+  display: block;
+  font-size: 14px;
+}
+
+/* Rating Breakdown */
+.rating-breakdown .star-row {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 6px;
+}
+
+.star-bar .filled {
+  color: gold;
+}
+
+/* Reviews */
+.reviews-list {
+  display: flex;
+  gap: 35px;
+  margin-top: 25px;
+  flex-wrap: wrap;
+}
+
+.review-card-container {
+  position: relative;
+}
+
+.reviewer-avatar {
+  border-radius: 50%;
+  position: absolute;
+  width: 50px;
+  height: 50px;
+  top: -15px;
+  left: -15px;
+}
+
+.review-card {
+  background-color: white;
+  backdrop-filter: blur(5px);
+  border-radius: 10px;
+  padding: 30px;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  width: 300px;
+  height: 270px;
+  color: white;
+}
+.review-rating {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 10px;
+}
+.reviewer-name {
+  color: black;
+  margin: 0 0 10px 0;
+  font-size: 18px;
+}
+
+.review-comment {
+  color: black;
+  margin: 0 0 10px 0;
+  line-height: 1.3;
+}
+.review-stars {
+  color: gold
+}
+.review-date {
+  color: rgba(0, 0, 0, 0.719);
+  font-size: 14px;
+  margin: 0;
+}
+/* Review Form */
+.traineereview-container {
+  background-color: #a00000;
+  backdrop-filter: blur(10px);
+  padding: 24px;
+  margin-top: 16px;
+  height: 520px;
+    width: 1050px;
+    color: white;
+}
+
+.review-form-page .feedback-title {
+  font-size: 32px;
+  margin-bottom: 20px;
+}
+
+.form-container {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.form-group label {
+  margin-bottom: 8px;
+  font-weight: bold;
+  display: block;
+
+}
+
+.formname-group input {
+  width: fit-content;
+position: absolute;
+bottom: 65%;
+right: 79.3%;
+}
+.formname-group input:focus,
+.formname-group select:focus {
+  outline: none;
+  box-shadow: 0 0 0 3px #570303;
+}
+.formname-group label {
+  margin-bottom: 8px;
+  font-weight: bold;
+  display: block;
+
+}
+.form-group textarea {
+  width: 100%;
+  padding: 10px;
+  resize: none;
+  border-radius: 5px;
+  border: 1px solid #ccc;
+}
+.form-group textarea:focus,
+.form-group select:focus {
+  outline: none;
+  box-shadow: 0 0 0 3px #570303;
+}
+.form-actions {
+  display: flex;
+  justify-content: flex-end;
+  gap: 10px;
+}
+
+.feedcancel-btn,
+.feedsubmit-btn {
+  padding: 8px 16px;
+  border: none;
+  border-radius: 20px;
+  cursor: pointer;
+  width: 200px;
+  position: relative;
+  right: 285px;
+  top: 20px;
+}
+
+.feedcancel-btn {
+  background-color: white;
+  color: #570303;
+}
+.feedcancel-btn:hover {
+  background-color: #570303;
+  color: white;
+}
+.feedsubmit-btn {
+  background-color: #570303;
+  color: white;
+}
+
+.feedsubmit-btn:disabled {
+  background-color: grey;
+  color: #570303;
+  cursor: not-allowed;
+}
+
+/* Star Ratings */
+.star-rating {
+  text-align: center;
+}
+
+.star-rating p {
+  margin-bottom: 10px;
+  color: white;
+}
+
+.stars .star {
+  font-size: 30px;
+  color: white;
+  cursor: pointer;
+}
+
+.stars .star.filled {
+  color: gold;
+}
+
+/* Write Review Button */
+.write-review-btn {
+  background: #570303;
+  border: none;
+  color: white;
+  padding: 8px 15px;
+  border-radius: 20px;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin-top: 20px;
+  cursor: pointer;
+  width: fit-content;
+  position: relative;
+  left: 400px;
+ bottom: 8px;
+}

@@ -1,0 +1,43 @@
+.final-submit-container {
+    background: url("../assets/why1.jpg") ;
+    min-width: 100%;
+    min-height: 100%;
+    background-size: cover;
+    background-position: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+.final-submit-card {
+    background: white;
+    padding: 30px;
+    border-radius: 10px;
+    text-align: center;
+    width: 450px;
+    backdrop-filter: blur(8px);
+}
+
+.final-submit-card p{
+    color: black;
+    font-weight: bold;
+}
+
+.icon {
+    font-size: 80px;
+    color: red;
+}
+
+.final-submit-card button {
+    background-color: #d10000;
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+.final-submit-card button:hover {
+    background: grey;
+    color: white;
+  }

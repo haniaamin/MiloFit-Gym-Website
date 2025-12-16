@@ -1,0 +1,99 @@
+/* General Styles */
+body {
+    margin: 0;
+    font-family: 'Inter', sans-serif;
+    background-color: #f4f4f4;
+    color: black
+    
+  }
+  
+  .admin-dash {
+    display: flex;
+    min-height: 100vh;
+    position: relative;
+    background-image: url("../assets/Footer.jpg"); /* Add your background image */
+    background-size: cover;
+    background-position: center;
+    
+  }
+  
+  /* Background Overlay */
+  .background-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.5); /* Semi-transparent black overlay */
+    z-index: 0;
+    backdrop-filter: blur(10px); /* Blur effect */
+  }
+  
+  /* Main Content */
+  .main-content {
+    margin-left: 250px;
+    flex: 1;
+    padding: 16px;
+    position: relative;
+    z-index: 1;
+  }
+  
+  /* Container for Content */
+  .admindash-container {
+    background-color: #a00000;
+    backdrop-filter: blur(10px); /* Blur effect */
+    padding: 24px;
+    margin-top: 16px;
+    height: 520px;
+    width: 1050px;
+  }
+  .stats-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    margin-top: 60px;
+    padding: 30px;
+  }
+  
+  .stat {
+    background: #ffffff;
+    border-radius: 10px;
+    padding: 20px;
+    text-align: center;
+    width: 250px; /* Increased width for better spacing */
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+    margin-bottom: 60px;
+  }
+  
+  .stat h3 {
+    margin: 0;
+    color: #570303;
+  }
+  
+  .stat p {
+    font-size: 16px;
+    font-weight: bold;
+    color: black;
+    margin-top: 10px;
+  }
+  
+  @media (max-width: 768px) {
+    .stats-container {
+      flex-direction: column;
+      align-items: center;
+    }
+  
+    .stat {
+      width: 90%;
+    }
+  }
+  
+  
+  @keyframes bounce {
+    0%, 100% {
+      transform: translateY(0);
+    }
+    50% {
+      transform: translateY(-10px);
+    }
+  }

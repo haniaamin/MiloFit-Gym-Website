@@ -1,0 +1,1095 @@
+/* General Styles */
+body {
+  margin: 0;
+  font-family: 'Inter', sans-serif;
+  background-color: #f4f4f4;
+  color: black
+  
+}
+
+.trainee-dash {
+  display: flex;
+  min-height: 100vh;
+  position: relative;
+  background-image: url("../assets/Footer.jpg"); /* Add your background image */
+  background-size: cover;
+  background-position: center;
+  
+}
+
+/* Background Overlay */
+.background-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.5); /* Semi-transparent black overlay */
+  z-index: 0;
+  backdrop-filter: blur(10px); /* Blur effect */
+}
+
+/* Main Content */
+.main-content {
+  margin-left: 250px;
+  flex: 1;
+  padding: 16px;
+  position: relative;
+  z-index: 1;
+}
+  
+  /* Container for Content */
+  .traineeprofile-container {
+    background-color: #a00000;
+    backdrop-filter: blur(10px); /* Blur effect */
+    padding: 24px;
+    margin-top: 16px;
+    height: 520px;
+    width: 1050px;
+    overflow:hidden;
+  }
+
+/* Profile Tabs */
+.profile-tabs {
+  display: flex;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+  margin-bottom: 20px;
+}
+
+.tab-btn {
+  padding: 10px 20px;
+  background: transparent;
+  border: none;
+  color: white;
+  font-size: 16px;
+  cursor: pointer;
+  position: relative;
+  margin-right: 5px;
+  transition: all 0.3s ease;
+}
+
+.tab-btn:hover {
+  background-color: #570303;
+  color: white;
+}
+
+.tab-btn.active {
+  font-weight: bold;
+  color: white;
+}
+
+.tab-btn.active::after {
+  content: '';
+  position: absolute;
+  bottom: -1px;
+  left: 0;
+  width: 100%;
+  height: 3px;
+  background: white;
+}
+
+/* Profile Picture Container */
+.profile-pic-container {
+  text-align: center;
+  position: relative;
+  color: white;
+}
+
+.profile-pic {
+  width: 120px;
+  height: 120px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 2px solid white;
+}
+
+.camera-icon {
+  position: absolute;
+  bottom: -10px;
+  right: 425px;
+  padding: 5px;
+  cursor: pointer;
+  font-size: 20px;
+  color: black;
+  background: white;
+  border-radius: 50%;
+  width: 30px;
+  height: 30px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.camera-icon:hover {
+  color:grey;
+}
+
+/* Form Container */
+.forms-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  gap: 1px;
+  margin-bottom: 7px;
+}
+
+/* Form Fields */
+.form-field {
+  width: 250px;
+  margin-top: 10px;
+}
+
+.form-field label {
+  display: block;
+  margin-bottom: 8px;
+  color: white;
+}
+
+.form-field input {
+  width: 100%;
+  padding: 8px;
+  border: none;
+  border-radius: 4px;
+  box-sizing: border-box;
+  color: black;
+  background-color: white;
+}
+.form-field  input:focus,
+.form-field  select:focus {
+  outline: none;
+  box-shadow: 0 0 0 3px #570303;
+}
+.profile-info {
+  padding: 8px;
+  background-color: white;
+  border-radius: 4px;
+  color: black;
+  width: 250px;
+}
+
+/* Action Buttons */
+.action-btns {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 5px;
+  gap: 10px;
+  width: 170px;
+  margin-left: 400px;
+}
+
+/* Action Buttons */
+.profaction-btns {
+    display: flex;
+    gap: 10px;
+    margin-top: 10px;
+    width: 270px;
+    
+}
+
+.cancel-btn, .save-btn {
+  padding:  20px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  margin-top: -40px;
+}
+
+.save-status {
+  margin-top: 5px;
+  padding: 20px;
+  font-size: 14px;
+  display:contents;
+  transform: translateY(-10px);
+  animation: fadeIn 0.4s ease-out forwards;
+  
+}
+
+/* Status Types */
+.save-status.error {  
+  color: black;
+}
+
+.save-status.success {
+  color: #2E7D32;
+}
+
+.save-status.loading {
+  color: #0D47A1;
+}
+
+/* Icons */
+.save-status .icon {
+  font-size: 18px;
+}
+
+.save-status.error .icon {
+  color: #FF4444;
+}
+
+.save-status.success .icon {
+  color: #4CAF50;
+}
+
+.save-status.loading .icon {
+  animation: spin 1s linear infinite;
+}
+
+/* Animations */
+@keyframes fadeIn {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes spin {
+  from { transform: rotate(0deg); }
+  to { transform: rotate(360deg); }
+}
+
+.profaction-btns .save-btn {
+  background-color: #570303;
+  color: white;
+  margin-left: 20px;
+  height: 40%;
+  padding: 7px ;
+  position: relative;
+    left: 356px;
+    top: 45px;
+}
+
+.profaction-btns .save-btn:disabled {
+  background-color: #cccccc;
+  cursor: not-allowed;
+}
+
+.profaction-btns .save-btn.error-state {
+  background-color: #f44336; /* Red when there's an error */
+}
+
+.profaction-btns .save-error-message {
+  color: #f44336;
+  margin-top: 10px;
+  font-size: 14px;
+}
+
+.profaction-btns .cancel-btn {
+  color:#570303;
+  background-color:white;
+  margin-left: 20px;
+  height: 40%;
+  padding: 7px ;
+  position: relative;
+    left: 356px;
+    top: 45px;
+}
+
+
+
+.profaction-btns .cancel-btn:hover {
+  background-color: #570303;
+  color: white;
+}
+
+.profaction-btns .save-btn:hover {
+  background-color: white;
+  color: #570303;
+}
+.profaction-btns .save-btn:active {
+    transform: translateY(0);
+  }
+  .profaction-btns .save-btn.error-state {
+    background-color: #FF4444;
+  }
+  
+  .profaction-btns .save-btn:disabled {
+    background-color: #BDBDBD;
+    cursor: not-allowed;
+    transform: none;
+    box-shadow: none;
+  }
+
+ .edit-btn {
+  background-color: #570303;
+  color: white;
+  margin-left: 20px;
+  height: 40%;
+  padding: 7px ;
+  position: relative;
+  bottom:2px ;
+  left: 356px;
+}
+ .edit-btn:hover {
+  background-color: white;
+  color: #570303;
+}
+
+/* Tab-specific content styles */
+.membership-content, .preferences-content, .logout-content {
+  color: white;
+  padding: 20px 0;
+}
+
+.membership-info p, .preferences-form {
+  margin: 15px 0;
+}
+
+.upgrade-btn, .save-prefs-btn, .confirm-logout, .cancel-logout {
+  padding: 10px 20px;
+  border: none;
+  border-radius: 20px;
+  cursor: pointer;
+  margin-top: 20px;
+
+}
+
+.upgrade-btn, .save-prefs-btn, .confirm-logout {
+  background: white;
+  color: black;
+}
+.confirm-logout{
+  background-color:#570303;
+  color: white;
+}
+.confirm-logout:hover {
+  background-color: white;
+  color:#570303;
+
+}
+
+.cancel-logout {
+  background: white;
+  color: #570303;
+  border: 1px solid white;
+  margin-right: 10px;
+}
+.cancel-logout:hover {
+  background-color:  #570303;
+  color: white;
+  border: none;
+}
+
+.preference-field {
+  margin-bottom: 20px;
+}
+
+.preference-field label {
+  display: block;
+  margin-bottom: 8px;
+}
+
+.preference-field select {
+  width: 100%;
+  padding: 8px;
+  border-radius: 4px;
+  background: white;
+  border: none;
+}
+
+.logout-actions {
+  display: flex;
+  margin-top: 30px;
+}
+/* Preferences Section - Additional Styles */
+.preferences-content {
+  color: white;
+  padding: 10px 0;
+}
+
+.preference-section {
+  display: flex;
+  align-items: flex-start; /* Align items to the top */
+  gap: 20px; /* Space between h5 and content */
+  padding-bottom: 8px;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+  margin-bottom: 15px;
+  margin-top: -5px;
+
+}
+
+.preference-section h5 {
+  margin: 0;
+  font-size: 13px;
+  color: #fff;
+  min-width: 150px; /* Give consistent width to headings */
+  padding-top: 5px; 
+}
+
+.inline-preferences {
+  display: flex;
+  gap: 30px; /* Space between the two preference groups */
+  width: 100%;
+}
+
+.preference-group {
+  display: flex;
+  align-items: center;
+  gap: 10px; /* Space between label and select */
+  flex: 1; /* Each group takes equal space */
+}
+.preference-group h5 {
+  margin: 0;
+  min-width: 120px; /* Adjust as needed */
+}
+.inline-sections {
+  display: flex;
+  gap: 30px; /* Space between the two inline sections */
+  width: 100%;
+}
+
+.inline-section {
+  flex: 1; /* Each takes equal space */
+}
+
+.checkbox-group {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  font-size: smaller;
+  align-items: center;
+}
+
+.checkbox-option {
+  display: flex;
+  align-items: center;
+  position: relative;
+  padding-left: 30px;
+  cursor: pointer;
+  user-select: none;
+}
+
+.checkbox-option input {
+  position: absolute;
+  opacity: 0;
+  cursor: pointer;
+  height: 0;
+  width: 0;
+}
+
+.checkmark {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 20px;
+  width: 20px;
+  background-color: rgba(255, 255, 255, 0.1);
+  border-radius: 4px;
+}
+
+.checkbox-option:hover input ~ .checkmark {
+  background-color: rgba(255, 255, 255, 0.3);
+}
+
+.checkbox-option input:checked ~ .checkmark {
+  background-color: white;
+}
+
+.checkmark:after {
+  content: "";
+  position: absolute;
+  display: none;
+}
+
+.checkbox-option input:checked ~ .checkmark:after {
+  display: block;
+}
+
+.checkbox-option .checkmark:after {
+  left: 7px;
+  top: 3px;
+  width: 5px;
+  height: 10px;
+  border: solid #a00000;
+  border-width: 0 2px 2px 0;
+  transform: rotate(45deg);
+}
+
+.preference-select {
+  width: 140px;
+  height: 35px;
+  padding: 8px;
+  border-radius: 4px;
+  background: white;
+  border: none;
+  color: #333;
+  
+}
+
+.preference-row {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+}
+
+
+.save-prefs-btn {
+  padding: 10px 20px;
+  background-color:#570303;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  font-weight: bold;
+  cursor: pointer;
+  width: 160px;
+  margin-left: 430px;
+  margin-top: 5px;
+  position: relative;
+  bottom: 7px;
+}
+
+.save-prefs-btn:hover {
+  background-color:white;
+  color:#570303;
+}
+
+.notification-preferences-row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 50px;
+  align-items: center;
+  width: 100%;
+}
+
+.preference-item {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.preference-item label {
+  white-space: nowrap;
+  font-size: 13px;
+  color: #fff;
+}
+
+/* Keep existing toggle switch styles */
+.toggle-option {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 20px;
+  color: white;
+}
+.toggle-label-with-tooltip {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.toggle-switch {
+  position: relative;
+  display: inline-block;
+  width: 50px;
+  height: 24px;
+}
+
+.toggle-switch input {
+  opacity: 0;
+  width: 0;
+  height: 0;
+}
+
+.slider {
+  position: absolute;
+  cursor: pointer;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: #ccc;
+  transition: all 0.3s ease-in-out;
+  border-radius: 24px;
+}
+
+.slider:before {
+  position: absolute;
+  content: "";
+  height: 16px;
+  width: 16px;
+  left: 4px;
+  bottom: 4px;
+  background-color: white;
+  transition: all 0.3s ease-in-out;
+  border-radius: 50%;
+}
+
+input:checked + .slider {
+  background-color: #4CAF50;
+}
+
+input:checked + .slider:before {
+  transform: translateX(26px);
+}
+
+
+/* Membership Details Styles - Updated */
+.membership-content {
+  color: white;
+  padding: 10px 0;
+  
+}
+
+.membership-content h2 {
+  font-size: 24px;
+  margin-bottom: 20px;
+  padding-bottom: 10px;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+.membership-card {
+  background: rgba(255, 255, 255, 0.1);
+  border-radius: 8px;
+  padding: 25px;
+  margin-bottom: 30px;
+  backdrop-filter: blur(5px);
+  
+}
+
+.membership-card h3 {
+  color: white;
+  font-size: 20px;
+  margin-bottom: 15px;
+  padding-bottom: 10px;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+.payment-settings {
+  margin-bottom: 30px;
+  
+}
+
+.payment-settings h4 {
+  font-size: 180px;
+  margin-bottom: 10px;
+}
+
+.payment-settings p {
+  color: rgba(255, 255, 255, 0.8);
+  margin-bottom: 15px;
+  font-size: 140px;
+}
+
+.checkbox-option {
+  display: flex;
+  align-items: flex-start;
+  margin-bottom: 15px;
+  color: white;
+}
+
+.checkbox-option input[type="checkbox"] {
+  margin-right: 10px;
+  margin-top: 3px;
+  accent-color: #a00000;
+}
+
+.checkbox-option label {
+  font-weight: 500;
+}
+
+.checkbox-description {
+  color: rgba(255, 255, 255, 0.7);
+  font-size: 13px;
+  margin-left: 25px;
+  margin-top: 5px;
+}
+
+.card-details {
+  background: rgba(0, 0, 0, 0.2);
+  padding: 15px;
+  border-radius: 6px;
+  margin: 20px 0;
+}
+
+.card-details h5 {
+  font-size: 15px;
+  color: rgba(255, 255, 255, 0.8);
+  margin-bottom: 5px;
+}
+
+.card-holder {
+  font-weight: 500;
+  margin-bottom: 15px;
+}
+
+.credit-card-number {
+  font-family: monospace;
+  font-size: 16px;
+  letter-spacing: 1px;
+  margin-bottom: 5px;
+}
+.form-row {
+  margin-bottom: -25px;
+  margin-top: -24px;
+  height: 75px;
+  margin-left: -20px;
+}
+
+.form-label {
+  flex: 0 0 150px;
+  color: white;
+  font-size: 14px;
+  font-weight: 500;
+  padding-bottom: 30px;
+  margin-right: -20px;
+}
+
+.form-input {
+  min-width: 200px;  /* Ensures enough space for 16 digits */
+  letter-spacing: 1px; /* Improves readability */
+  flex: 1;
+  background: rgba(255, 255, 255, 0.9);
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  font-size: 12px;
+  transition: all 0.3s ease;
+  box-shadow: inset 0 1px 3px rgba(0, 0, 0, 0.1);
+}
+.form-input[name="cardNumber"] {
+  letter-spacing: 1px;
+  padding-right: 50px;
+}
+.save-error-message {
+  color: #ff4444;
+  margin-top: 10px;
+  font-size: 14px;
+}
+
+.save-btn:disabled {
+  background-color: #cccccc;
+  cursor: not-allowed;
+}
+
+/* Payment Credentials Section */
+.payment-credentials {
+  background: rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(10px);
+  border-radius: 12px;
+  padding: 26px;
+  margin-top: -13px;
+  height: 175px;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+}
+.payment-credentials input {
+  
+  padding: 5px 10px;
+  background: rgba(255, 255, 255, 0.9);
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  font-size: 15px;
+  transition: all 0.3s ease;
+  box-shadow: inset 0 1px 3px rgba(0, 0, 0, 0.1);
+}
+
+.payment-credentials input:focus {
+  outline: none;
+  border-color: #a00000;
+  box-shadow: 0 0 0 2px rgba(160, 0, 0, 0.2);
+  background: white;
+}
+
+.payment-credentials .form-row {
+  display: flex;
+  flex-direction: row;
+  align-items: baseline;
+  height: 50%;
+}
+.expiry-input {
+  width: 120px;
+}
+.verified-badge {
+  display: inline-block;
+  background: #4CAF50;
+  color: white;
+  font-size: 12px;
+  padding: 2px 8px;
+  border-radius: 10px;
+  margin-left: 10px;
+}
+
+.payment-header, .billing-header {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin-bottom: 15px;
+}
+
+.payment-header h4, .billing-header h4 {
+  margin: 0;
+  font-size: 18px;
+}
+
+.payment-actions {
+  margin-left: 20px;
+    display: flex;
+    gap: 10px;
+    margin-top: 10px;
+    position: relative;
+    top: 66px;
+    right: 15px;
+}
+
+
+.payment-actions .cancel-btn {
+  background-color: white;
+  color:#570303;
+  margin-left: 20px;
+  height: 40%;
+  padding: 4px ;
+}
+
+.payment-actions .save-btn {
+  background-color: #570303;
+  color: white;
+  margin-left: 20px;
+  height: 40%;
+  padding: 4px ;
+}
+
+.payment-actions .cancel-btn:hover {
+  background-color: #570303;
+  color: white;
+}
+
+.payment-actions .save-btn:hover {
+  background-color: white;
+  color:#570303;
+}
+
+.valid-until {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-top: 15px;
+  color: rgba(255, 255, 255, 0.8);
+  font-size: 14px;
+}
+
+.valid-until p {
+  margin: 0;
+}
+
+.change-plan-btn {
+  background: transparent;
+  color: white;
+  border: none;
+  text-decoration: underline;
+  cursor: pointer;
+  font-size: 14px;
+}
+
+.change-plan-btn:hover {
+  color: rgba(255, 255, 255, 0.8);
+}
+
+.billing-history {
+ /* margin-top: -10px;*/
+ background: rgba(255, 255, 255, 0.1);
+ backdrop-filter: blur(10px);
+ border-radius: 12px;
+ padding: 26px;
+ margin-top: 10px;
+ height: 280px;
+ border: 1px solid rgba(255, 255, 255, 0.2);
+ box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+  
+}
+
+.billing-item {
+  background: rgba(0, 0, 0, 0.2);
+  padding: 0px 10px;
+  margin: 10px;
+  border-radius: 6px;
+  display: grid;
+  grid-template-columns: 2fr 1fr 1fr 1fr;
+  gap: 10px;
+  align-items: center;
+  position: relative;
+  bottom: 28px;
+}
+
+.billing-item p {
+  margin: 0;
+  font-size: 13px;
+  color: rgba(255, 255, 255, 0.9);  
+}
+
+
+.current-membership {
+  background-color:rgba(128, 128, 128, 0.582);
+  padding:  10px;
+  border-radius: 8px;
+  margin-bottom: -10px; 
+  margin-top: -15px;
+  color: black;
+  display:flex;
+  height: 30px;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.membership-info {
+  display: flex;
+  align-items:center;
+  flex-direction: row; /* Stack h3 and p vertically */
+  gap: 50px; /* Add space between h3 and p */
+}
+
+.current-membership h4 {
+  margin: 10px;
+  font-size: 1em;
+  color: white;
+}
+.current-membership h5 {
+  font-size: 1em;
+  color:black;
+  font-style: italic;
+  font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+  margin-right: 30px;
+}
+
+.current-membership p {
+  margin: 10px ;
+  font-size: 1em;
+  color: white;
+}
+
+.current-membership button {
+  background-color: #971D1F;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 0.8em;
+  width: auto;
+  height: 25px;
+  margin-left: 200px;
+  flex: 0 0 auto;
+  margin: 10px;
+  padding: 10px 20px;
+}
+
+
+.current-membership button:hover {
+  background-color: black;
+}
+/* Add these styles to your existing CSS */
+
+.membership-columns-container {
+  display: flex;
+  gap: 20px;
+  margin-top: 20px;
+}
+
+.payment-container, .billing-container {
+  flex: 1;
+  background: linear-gradient(135deg, #570303, black);
+  border-radius: 8px;
+  padding: 20px;
+  margin-top: -8px;
+  backdrop-filter: blur(5px);
+  height:360px;
+}
+
+.membership-info {
+  display: flex;
+  align-items: center;
+  flex-direction: row;
+  gap: 50px;
+}
+
+.current-membership h4 {
+  margin: 10px;
+  font-size: 1em;
+  color: white;
+}
+
+.current-membership h5 {
+  font-size: 1em;
+  color: black;
+  font-style: italic;
+  font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+  margin-right: 30px;
+}
+
+.current-membership p {
+  margin: 10px;
+  font-size: 1em;
+  color: white;
+}
+
+.current-membership button {
+  background-color: #971D1F;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 0.8em;
+  width: auto;
+  height: 25px;
+  margin-left: 200px;
+  flex: 0 0 auto;
+  margin: 10px;
+  padding: 10px 20px;
+}
+
+.current-membership button:hover {
+  background-color: black;
+}
+
+/* Tooltip styles */
+.tooltip {
+  position: relative;
+  display: inline-block;
+  
+}
+
+.tooltip-icon {
+  color: rgba(255, 255, 255, 0.6);
+  font-size: 14px;
+  transition: color 0.2s;
+}
+
+.tooltip-icon:hover {
+  color: white;
+}
+
+.tooltip-text {
+  visibility: hidden;
+  width: 200px;
+  background-color: #333;
+  color: #fff;
+  text-align: center;
+  border-radius: 6px;
+  padding: 5px;
+  position: absolute;
+  z-index: 1;
+  bottom: 125%;
+  left: 50%;
+  margin-left: -100px;
+  opacity: 0;
+  transition: opacity 0.3s;
+  font-size: 12px;
+  font-weight: normal;
+}
+
+.tooltip-text::after {
+  content: "";
+  position: absolute;
+  top: 100%;
+  left: 50%;
+  margin-left: -5px;
+  border-width: 5px;
+  border-style: solid;
+  border-color: #333 transparent transparent transparent;
+}
+
+.tooltip:hover .tooltip-text {
+  visibility: visible;
+  opacity: 1;
+}
+
+
+
+
+

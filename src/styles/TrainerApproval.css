@@ -1,0 +1,173 @@
+/* General Styles */
+body {
+  margin: 0;
+  font-family: 'Inter', sans-serif;
+  background-color: #f4f4f4;
+  color: black;
+}
+
+.admin-dash {
+  display: flex;
+  min-height: 100vh;
+  position: relative;
+  background-image: url("../assets/Footer.jpg"); /* Add your background image */
+  background-size: cover;
+  background-position: center;
+}
+
+/* Background Overlay */
+.background-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.5); /* Semi-transparent black overlay */
+  z-index: 0;
+  backdrop-filter: blur(10px); /* Blur effect */
+}
+
+/* Main Content */
+.main-content {
+  margin-left: 250px;
+  flex: 1;
+  padding: 16px;
+  position: relative;
+  z-index: 1;
+}
+
+/* Container for Content */
+.trainerapprove-container {
+  background-color: #a00000;
+  backdrop-filter: blur(10px);
+  padding: 24px;
+  margin-top: 16px;
+  height: 520px;
+  width: 1050px;
+  overflow-y: auto;
+}
+
+.user-profiles {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+  margin-bottom: 20px;
+}
+
+.profile-card {
+  background-color: white;
+  border-radius: 10px;
+  padding: 12px;
+  width: 220px; /* Reduced width */
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+  transition: transform 0.3s ease;
+}
+
+.profile-card:hover {
+  transform: scale(1.03); /* Optional subtle hover effect */
+}
+
+
+.profile-card h3 {
+  margin: 8px 0 4px;
+  font-size: 16px;
+  color: black;
+  text-align: center;
+}
+
+.profile-card p {
+  margin: 0 0 8px;
+  font-size: 13px;
+  color: grey;
+  text-align: center;
+}
+
+.profile-image {
+  width: 180px;
+  height: 180px;
+  border-radius: 6px;
+  object-fit: cover;
+}
+
+
+/* Approval Buttons */
+.approval-buttons {
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+  margin-top: 10px;
+}
+.no-trainers-message {
+  width: 100%;
+  padding: 40px;
+  background-color: #ffffffdd;
+  border-radius: 12px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+  text-align: center;
+  margin-top: 100px;
+  backdrop-filter: blur(5px);
+  animation: fadeIn 0.5s ease-in-out;
+}
+
+.no-trainers-message h2 {
+  font-size: 24px;
+  margin-bottom: 8px;
+  color: #a00000;
+  font-weight: 700;
+}
+
+.no-trainers-message p {
+  font-size: 16px;
+  color: #444;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(10px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
+.approve-button,
+.reject-button {
+  flex: 1;
+  padding: 8px 12px;
+  font-weight: bold;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  margin: 0 5px;
+  transition: background-color 0.3s ease;
+}
+
+.approve-button {
+  background-color: green;
+  color: white;
+}
+
+.reject-button {
+  background-color: red;
+  color: white;
+}
+
+.approve-button:hover {
+  background-color: grey;
+  color: white;
+}
+
+.reject-button:hover {
+  background-color: grey;
+  color: white;
+}
+
+/* Bounce animation (if needed later) */
+@keyframes bounce {
+  0%, 100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-10px);
+  }
+}

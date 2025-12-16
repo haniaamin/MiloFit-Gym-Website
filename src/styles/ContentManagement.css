@@ -1,0 +1,152 @@
+body {
+  margin: 0;
+  font-family: 'Inter', sans-serif;
+  background-color: #f4f4f4;
+  color: black;
+}
+
+.admin-dash {
+  display: flex;
+  min-height: 100vh;
+  position: relative;
+  background-image: url("../assets/Footer.jpg");
+  background-size: cover;
+  background-position: center;
+}
+
+/* Background Overlay */
+.background-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.5);
+  z-index: 0;
+  backdrop-filter: blur(10px);
+}
+
+/* Main Content */
+.main-content {
+  margin-left: 250px;
+  flex: 1;
+  padding: 16px;
+  position: relative;
+  z-index: 1;
+}
+
+/* Container */
+.contentmanage-container {
+  background-color: #a00000;
+  backdrop-filter: blur(10px);
+  padding: 24px;
+  margin-top: 16px;
+  height: 520px;
+  width: 1050px;
+  border-radius: 10px;
+  overflow: auto;
+}
+
+/* Top Bar */
+.contentmanagetop-bar {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 16px;
+}
+
+.contentmanagesearch-bar {
+  padding: 8px;
+  border-radius: 5px;
+  border: none;
+  width: 250px;
+  outline: none;
+}
+
+.contentmanagefilter-dropdown select {
+  padding: 8px;
+  border-radius: 5px;
+  border: none;
+  outline: none;
+  width: 110px;
+}
+
+/* Table */
+.contentmanagecontent-table {
+  width: 100%;
+  border-collapse: collapse;
+  background-color: white;
+  border-radius: 10px;
+}
+
+.contentmanagecontent-table th {
+  padding: 12px;
+  text-align: left;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+.contentmanagecontent-table td {
+  padding: 12px;  
+    text-align: left;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+    background-color: #570303;
+    color: white;
+}
+
+/* Status Styling */
+.contentmanagestatus {
+  padding: 5px 10px;
+  border-radius: 20px;
+  font-size: 13px;
+  font-weight: 500;
+}
+
+.contentmanagestatus.active {
+  background-color: #4caf50;
+  color: white;
+}
+
+.contentmanagestatus.inactive {
+  background-color: #f44336;
+  color: white;
+}
+
+/* Actions */
+.contentmanageaction-menu {
+  position: relative;
+}
+
+.contentmanagemenu-icon {
+  cursor: pointer;
+}
+
+.contentmanagedropdown-menu {
+  position:absolute;
+  left: 20px;
+  bottom: -70px;
+  background-color: white;
+  border-radius: 5px;
+  padding: 5px;
+  display: flex;
+  flex-direction: column;
+}
+
+.contentmanagedropdown-menu button {
+  width: 110px;
+  border: none;
+  padding: 5px;
+  cursor: pointer;
+  background-color: white;
+}
+
+.contentmanagedropdown-menu .view {
+  color: black;
+}
+.contentmanagedropdown-menu .active {
+  color: green;
+}
+.contentmanagedropdown-menu .delete {
+  color: red;
+}
+.contentmanagedropdown-menu button:hover {
+ color: grey;
+}

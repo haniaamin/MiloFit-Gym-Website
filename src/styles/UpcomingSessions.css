@@ -1,0 +1,141 @@
+.us-trainee-dash {
+  display: flex;
+  min-height: 100vh;
+  position: relative;
+  background-image: url("../assets/bg.jpg");
+  background-size: cover;
+  background-position: center;
+}
+
+.us-background-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.5);
+  z-index: 0;
+  backdrop-filter: blur(10px);
+}
+
+.us-main-content {
+  margin-left: 250px;
+  flex: 1;
+  padding: 16px;
+  position: relative;
+  z-index: 1;
+}
+
+.us-content-container {
+  background-color: #a00000;
+  backdrop-filter: blur(10px);
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  gap: 10px;
+  padding: 24px;
+  margin-top: 16px;
+  height: 520px;
+  width: 1050px;
+}
+
+.us-section {
+  background: linear-gradient(135deg, black, rgb(77, 77, 77));
+  color: white;
+  padding: 20px;
+  margin: 22px;
+  border-radius: 8px;
+  min-width: 300px;
+  flex: 1;
+  height: 200px;
+  display: flex;
+  flex-direction: column;
+}
+.us-section p {
+  color: white;
+}
+.us-schedule-inputs,
+.us-trainer-session-inputs {
+  display: flex;
+  gap: 15px;
+  margin-bottom: 10px;
+}
+
+.us-schedule-inputs select,
+.us-trainer-session-inputs select{
+  flex: 1;
+  padding: 8px;
+  font-size: 14px;
+}
+
+.us-button {
+  width: 190px;
+  margin-left: 120px;
+  background-color: #570303;
+  color: white;
+  padding: 8px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  position: relative;
+  top: 20px;
+}
+
+.us-button:hover {
+  background-color: white;
+  color: #570303;
+}
+
+.us-reschedule-controls {
+  display: flex;
+  gap: 10px;
+  align-items: center;
+}
+.uspersonal-button {
+  width: 190px;
+  margin-left: 120px;
+  background-color: #570303;
+  color: white;
+  padding: 8px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  position: relative;
+  bottom: 20px;
+}
+.uspersonal-button:hover {
+  background-color: white;
+  color: #570303;
+}
+
+.us-reschedule-controls select {
+  background-color: #fff;
+  color: black;
+}
+
+.us-cancel-button {
+  width: 190px;
+  margin-left: 120px;
+  background-color: #570303;
+  color: white;
+  padding: 8px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+.us-cancel-button:hover {
+  background-color: white;
+  color:#570303;
+}
+
+
+.us-reschedule-item p {
+  margin-bottom: 6px;
+  color: white;
+}
+
+h3 {
+  margin-top: 0;
+  font-size: 1.2rem;
+}

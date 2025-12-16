@@ -1,0 +1,218 @@
+/* General Styles */
+body {
+  margin: 0;
+  font-family: 'Inter', sans-serif;
+  background-color: #f4f4f4;
+  color: black
+  
+}
+
+.admin-dash {
+  display: flex;
+  min-height: 100vh;
+  position: relative;
+  background-image: url("../assets/Footer.jpg"); /* Add your background image */
+  background-size: cover;
+  background-position: center;
+  
+}
+
+/* Background Overlay */
+.background-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.5); /* Semi-transparent black overlay */
+  z-index: 0;
+  backdrop-filter: blur(10px); /* Blur effect */
+}
+
+/* Main Content */
+.main-content {
+  margin-left: 250px;
+  flex: 1;
+  padding: 16px;
+  position: relative;
+  z-index: 1;
+}
+
+/* Container for Content */
+
+
+.notificationsmanage-container {
+  background-color: #a00000;
+  backdrop-filter: blur(10px); /* Blur effect */
+
+  padding: 24px;
+  margin-top: 16px;
+  height: 520px;
+  width: 1050px;
+}
+
+.notificationsmanage-container h1 {
+  color: #570303;
+  margin-bottom: 5px;
+}
+
+.notificationsmanage-container h2 {
+  color: black;
+  margin-top: 0;
+  margin-bottom: 20px;
+}
+
+.notificationsmanage-form {
+  height: 210px;
+  background-color: white;
+  padding: 20px;
+  border-radius: 8px;
+  margin-bottom: 30px;
+}
+
+.notificationsmanage-form h3 {
+  margin-top: 0;
+  color: #570303;
+}
+.notificationsmanageform-row {
+  display: flex;
+  gap: 40px;
+  margin-top: 1px;
+  margin-bottom: 15px;
+  margin-left: 1px;
+}
+
+.notificationsmanageform-field {
+  flex: 1;
+}
+
+.notificationsmanageform-field label {
+  display: block;
+  margin-bottom: 16px;
+  font-weight: bold;
+  color: black;
+  position: relative;
+  top: 10px;
+}
+
+.notificationsmanageform-field select {
+  width: 200px;
+  padding: 8px;
+  border-radius: 5px;
+  border: 1px solid black;
+  background-color: white;
+}
+
+/* Message Content (full width below) */
+.notificationsmanagemessage-content {
+  margin-top: 10px;
+  display:inline;
+  margin-bottom: 5px;
+  margin-left:-50px;
+  font-weight: bold;
+  color: black;
+ position: relative;
+ left: 65px;
+ top: -2px;
+}
+
+.notificationsmanagemessage-content textarea {
+  width: 350px;
+  min-height:35px;
+  border-radius: 5px;
+  border: 1px solid black;
+  resize:vertical;
+  margin-top: 15px;
+  margin-right: 140px;
+}
+
+
+.notificationsmanagesend-button {
+  background-color: #570303;
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 5px;
+  cursor: pointer;
+  font-weight: bold;
+  width: 80px;
+  margin-left: 410px;
+  position: fixed;
+  top: 170px;
+  left: 30px;
+}
+
+.notificationsmanagesend-button:hover {
+  background-color: white;
+  color: #570303;
+}
+
+.notificationsmanagetemplates-section h3 {
+  color: #570303;
+  margin-top: 0;
+}
+
+.notificationsmanagetemplates-table {
+   width: 100%;
+    border-collapse: collapse;
+    background-color: white;
+    border-radius: 10px;
+
+}
+
+.notificationsmanagetemplates-table th {
+  
+  padding: 12px;
+  text-align: left;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+.notificationsmanagetemplates-table td {
+  padding: 12px;  
+  text-align: left;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+  background-color: #570303;
+  color: white;
+}
+
+/* Action Menu Styles */
+.notificationsmanageaction-menu {
+  position: relative;
+}
+
+.notificationsmanagemenu-icon {
+  cursor: pointer;
+
+}
+
+.notificationsmanagedropdown-menu {
+   position:absolute;
+    left: 20px;
+    bottom: -40px;
+    background-color: white;
+    border-radius: 5px;
+    padding: 5px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.notificationsmanagedropdown-menu button {
+  width: 55px;
+  border: none;
+  padding: 1px;
+  cursor: pointer;
+  background-color: white;
+}
+
+.notificationsmanagedropdown-menu .use {
+color: green;
+}
+
+.notificationsmanagedropdown-menu .edit {
+color: red;
+}
+
+.notificationsmanagedropdown-menu button:hover {
+color: grey;
+}

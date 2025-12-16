@@ -1,0 +1,56 @@
+.medical-info-container {
+    background: url("../assets/background.jpg") ;
+    min-width: 100%;
+    min-height: 100%;
+    background-size: cover;
+    background-position: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+.medical-info-box {
+    background: white;
+    padding: 30px;
+    border-radius: 15px;
+    text-align: center;
+    width: 500px;
+    backdrop-filter: blur(8px);
+}
+
+h2 {
+    margin-bottom: 10px;
+}
+
+p {
+    margin-bottom: 20px;
+    color: gray;
+}
+.medical {
+    width:198%;
+    display: flex;
+    gap: 10px;
+    margin-bottom: 10px;
+}
+input {
+    width: 100%;
+    padding: 10px;
+    margin: 10px 0;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+.save-button {
+    background: red;
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    cursor: pointer;
+    border-radius: 5px;
+}
+
+.save-button:hover {
+    background: grey;
+    color: white;
+}

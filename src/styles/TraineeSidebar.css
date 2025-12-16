@@ -1,0 +1,45 @@
+.sidebar {
+  width: 300px;
+  background: transparent; /* Semi-transparent black */
+  color: #ffffff;
+  padding: 16px;
+  position: absolute;
+  top: 84px;
+  backdrop-filter: blur(3px); /* Blur effect */
+}
+
+.sidebar button {
+  display: flex;
+  align-items: center;
+  width: 100%;
+  padding: 19px;
+  margin: 8px 0;
+  background: transparent;
+  color: #ffffff;
+  border: none;
+  border-radius: 8px;
+  font-size: 14px;
+  font-weight: bold;
+  cursor: pointer;
+  transition: background-color 0.3s, transform 0.3s;
+}
+
+.sidebar button:hover {
+  background: #a00000;
+  color: white;
+  transform: translateX(8px);
+}
+
+.sidebar button svg {
+  margin-right: 8px;
+}
+.sidebar button.active {
+  background: #a00000; /* Active button color */
+  color: white;
+  font-weight: bold;
+  transform: translateX(8px);
+}
+
+.sidebar button:hover {
+  background: #a00000;
+}

@@ -1,0 +1,213 @@
+
+  
+  button {
+    margin-top: 20px;
+    padding: 10px 20px;
+    background: #570303;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+  }
+  
+  button:disabled {
+    background: #ccc;
+    cursor: not-allowed;
+  }
+  
+/* General Styles */
+body {
+  margin: 0;
+  font-family: 'Inter', sans-serif;
+  background-color: #f4f4f4;
+  color: black
+  
+}
+
+.trainee-dash {
+  display: flex;
+  min-height: 100vh;
+  position: relative;
+  background-image: url("../assets/bg.jpg"); /* Add your background image */
+  background-size: cover;
+  background-position: center;
+  
+}
+
+/* Background Overlay */
+.background-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.5); /* Semi-transparent black overlay */
+  z-index: 0;
+  backdrop-filter: blur(10px); /* Blur effect */
+}
+
+/* Main Content */
+.main-content {
+  margin-left: 250px;
+  flex: 1;
+  padding: 16px;
+  position: relative;
+  z-index: 1;
+}
+
+/* Container for Content */
+.content-container {
+  background-color: #a00000;
+  backdrop-filter: blur(10px); /* Blur effect */
+  padding: 24px;
+  margin-top: 16px;
+  height: 520px;
+  width: 1050px;
+}
+  
+.content-container h1{
+ color: white;
+}
+/* Payment Option Buttons */
+.paymentmethod-options {
+  display: flex;
+  gap: 20px;
+  margin: 40px 0;
+}
+.carddetailsmethod{
+   display: flex;
+  gap: 10px;
+  margin: 5px;
+}
+
+.paymentmethod-option {
+  flex: 1;
+  padding: 12px;
+  background-color: #fff;
+  color: #570303;
+  border: 2px solid #570303;
+  border-radius: 6px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.paymentmethod-option.selected {
+  background-color: #570303;
+  color: white;
+}
+
+.paymentmethod-option:hover {
+  background-color: #570303;
+  color: white;
+}
+
+/* Card Payment Container */
+.cardmethod-payment {
+  background-color: #ffffff;
+  color: #000;
+  height: 50%;
+  padding: 24px 32px;
+  border-radius: 8px;
+  margin-top: 40px;
+  width: 100%;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+}
+
+.cardmethod-payment h2 {
+  margin-bottom: 20px;
+  color: #570303;
+}
+
+/* Form Styling */
+.cardmethod-payment form {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+}
+
+.cardmethod-payment label {
+  font-weight: bold;
+  margin-bottom: 5px;
+}
+
+.cardmethod-payment input {
+  padding: 10px 12px;
+  font-size: 16px;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+  transition: border 0.3s, box-shadow 0.3s;
+  width: 200px;
+position: relative;
+bottom: 17px;
+}
+
+.cardmethod-payment input:focus {
+  outline: none;
+  border-color: #570303;
+  box-shadow: 0 0 5px rgba(87, 3, 3, 0.4);
+}
+
+/* Error Message */
+.cardmethod-payment p {
+  color: red;
+  margin: 0;
+  font-size: 14px;
+}
+
+/* Submit Button */
+.cardmethod-payment button {
+  background-color: #570303;
+  color: #fff;
+  padding: 12px;
+  border: none;
+  border-radius: 6px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+.cardmethod-payment button:hover {
+  background-color: grey;
+  color: white;
+}
+
+/* Cash Payment Styling */
+.cashmethod-payment {
+ background-color: #ffffff;
+  color: #000;
+  height: 50%;
+  padding: 24px 32px;
+  border-radius: 8px;
+  margin-top: 40px;
+  width: 100%;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+}
+
+.cashmethod-payment h2 {
+  color: #570303;
+  margin-bottom: 12px;
+}
+
+.cashmethod-payment p {
+  margin: 8px 0;
+  font-size: 16px;
+    color: #000;
+
+}
+
+.cashmethod-payment button {
+  background-color: #570303;
+  color: white;
+  padding: 10px 16px;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  float: right;
+  margin-top: 12px;
+  transition: background-color 0.3s;
+}
+
+.cashmethod-payment button:hover {
+background-color: grey;
+  color: white;}

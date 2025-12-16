@@ -1,0 +1,118 @@
+/* Background Overlay */
+  .trpgbackground-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.5); /* Semi-transparent black overlay */
+    z-index: 0;
+    backdrop-filter: blur(5px); /* Blur effect */
+  }
+.trpg-container {
+    background: url("../assets/why1.jpg");
+  width: 100%;
+  height: 100vh;
+  background-size: cover;
+  background-position: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+}
+/* Bold Black & Red Theme for Trainers Page */
+.trainers-page {
+  background: white;
+  padding: 20px;
+  border-radius: 16px;
+  box-shadow: 0px 4px 20px rgba(0, 0, 0, 0.3);
+  text-align: center;
+  max-width: 550px;        /* 💡 Smaller width */
+  width: 90%;
+  height: auto;            /* 💡 Auto height to fit content */
+  position: relative;
+  z-index: 2;
+}
+
+
+.trainers-page h2 {
+font-size: 32px;
+  color:black;
+  font-weight: 700;
+  position: relative;
+  display: inline-block;
+}
+
+.trainers-page h2::after {
+ content: "";
+  width: 50px;
+  height: 3px;
+  background-color: red;
+  position: absolute;
+  left: 50%;
+  bottom: -8px;
+  transform: translateX(-50%);
+  border-radius: 2px;
+}
+
+
+/* Grid for Trainers */
+.trainerss-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 16px;
+  max-width: 700px;
+  margin: 20px auto 0;
+  padding: 0;
+
+}
+
+/* Trainer Card */
+.trainer-profiless {
+background-color: white;
+  border: 2px solid black;
+  padding: 10px;
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  text-align: center;
+  width: 100%;
+  aspect-ratio: 1 / 1; /* Makes it a perfect square */
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.trainer-profiless:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 8px 20px red;
+}
+
+/* Trainer Image */
+.trainer-profiless img {
+width: 100%;
+  height: auto;
+  max-height: 60%; /* Ensures room for text */
+  object-fit: contain; /* Show full image */
+  border-radius: 8px;
+  border: 2px solid white;
+}
+
+/* Name and description - smaller */
+/* Text styling */
+.trainer-profiless h3 {
+  font-size: 16px;
+  margin: 5px 0 0;
+  font-weight: 600;
+}
+
+.trainer-profiless p {
+  font-size: 14px;
+  color: grey;
+  margin: 4px 0;
+}
+@media (max-width: 600px) {
+  .trainerss-grid {
+    grid-template-columns: 1fr;
+  }
+}

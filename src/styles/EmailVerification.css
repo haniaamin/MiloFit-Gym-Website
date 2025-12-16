@@ -1,0 +1,74 @@
+/* Email Verification Page Styles */
+.email-verification-container {
+    background: url("../assets/why1.jpg") ;
+    min-width: 100%;
+    min-height: 100%;
+    background-size: cover;
+    background-position: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+.email-verification-box {
+    background: #fff;
+    padding: 30px;
+    border-radius: 10px;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    width: 400px;
+    backdrop-filter: blur(8px);
+
+}
+
+.email-verification-box h2 {
+    color: #333;
+    font-size: 24px;
+    margin-bottom: 10px;
+}
+
+.email-verification-box p {
+    font-size: 14px;
+    color: #666;
+    margin-bottom: 20px;
+}
+
+.otp-input {
+    width: 100%;
+    padding: 10px;
+    font-size: 16px;
+    text-align: center;
+    border: 2px solid #ddd;
+    border-radius: 5px;
+    outline: none;
+    transition: border-color 0.3s;
+}
+
+.otp-input:focus {
+    border-color: black;
+}
+
+.verify-btn {
+    width: 100%;
+    padding: 10px;
+    background-color: #E50914;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    font-size: 16px;
+    cursor: pointer;
+    margin-top: 15px;
+    transition: background 0.3s;
+}
+
+.verify-btn:hover {
+    background-color: grey;
+    color: white;
+}
+
+.message {
+    color: red;
+    font-size: 14px;
+    margin-top: 10px;
+}

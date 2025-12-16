@@ -1,0 +1,40 @@
+.pass-changed-container {
+    background: url("../assets/why1.jpg") ;
+    min-width: 100%;
+    min-height: 100%;
+    background-size: cover;
+    background-position: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+.pass-changed-card {
+    background: white;
+    padding: 30px;
+    border-radius: 10px;
+    text-align: center;
+    width: 450px;
+    height: 350px;
+    backdrop-filter: blur(8px);
+
+}
+
+.icon {
+    font-size: 80px;
+    color: red;
+}
+
+.btsi-button {
+    background-color: #d10000;
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+.btsi-button:hover {
+    background: grey;
+    color: white;
+  }

@@ -1,0 +1,235 @@
+/* General Styles */
+body {
+    margin: 0;
+    font-family: 'Inter', sans-serif;
+    background-color: #f4f4f4;
+    color: black
+    
+  }
+  
+  .trainer-dash {
+    display: flex;
+    min-height: 100vh;
+    position: relative;
+    background-image: url("../assets/bg.jpg"); /* Add your background image */
+    background-size: cover;
+    background-position: center;
+    
+  }
+  
+  /* Background Overlay */
+  .background-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.5); /* Semi-transparent black overlay */
+    z-index: 0;
+    backdrop-filter: blur(10px); /* Blur effect */
+  }
+  
+  /* Main Content */
+  .main-content {
+    margin-left: 250px;
+    flex: 1;
+    padding: 16px;
+    position: relative;
+    z-index: 1;
+  }
+  
+  /* Container for Content */
+  .content-container {
+    background-color: #a00000;
+    backdrop-filter: blur(10px); /* Blur effect */
+    padding: 24px;
+    margin-top: 16px;
+    height: 520px;
+    width: 1050px;
+  }
+  /* Tab Styles */
+.plan-tabs {
+    display: flex;
+    margin: 10px 0 15px 15px;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+  }
+  
+  .tab-btn {
+    background: transparent;
+    border: none;
+    padding: 10px 20px;
+    margin-right: 5px;
+    color: rgba(255, 255, 255, 0.7);
+    font-weight: 600;
+    font-size: 16px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    position: relative;
+  }
+  
+  .tab-btn.active {
+    color: white;
+  }
+  
+  .tab-btn.active::after {
+    content: '';
+    position: absolute;
+    bottom: -1px;
+    left: 0;
+    width: 100%;
+    height: 3px;
+    background: white;
+  }
+  
+  .tab-btn:hover:not(.active) {
+    color: rgba(255, 255, 255, 0.9);
+  }
+  
+  .tab-content {
+    min-height: 300px;
+  }
+ 
+  .plandisplay-summary {
+    display: flex;
+    gap: 20px;
+    margin-top: 5px;
+    margin-left: 25px;
+  }
+  
+  .plandisplaysummary-card {
+    background: linear-gradient(135deg, black, rgb(77, 77, 77));
+    padding: 15px;
+    border-radius: 8px;
+    flex: 1;
+    height: 90px;
+  }
+
+  .plandisplaysummary-card p {
+    display: inline;
+    margin-right: 14.7px; 
+    color: white;
+    font-size: 13px;
+ }
+  
+  .plandisplaysummary-card h4 {
+    color: white;
+    margin-top: 0;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.3);
+    padding-bottom: 8px;
+  }
+  
+  .plan-sections{
+    margin-left: 25px;
+
+  }
+  /* Workout Grid */
+  .workout-grid {
+    display: grid;
+    grid-template-columns: repeat(8, 1fr);
+    gap: 15px;
+  }
+  
+  .workout-card {
+    background-color: white;
+    padding: 10px;
+    height: 310px;
+    border-radius: 8px;
+    border-top: 4px solid #ff6b6b;
+  }
+  
+  .workout-card.strength { border-color: #ff9e3f; }
+  .workout-card.yoga { border-color: #241607; }
+  .workout-card.cardio { border-color: #4dabf7; }
+  .workout-card.hiit { border-color: #69db7c; }
+  .workout-card.rest { border-color: #adb5bd; }
+  
+  .workout-type {
+    font-weight: bold;
+    color:#570303;
+    margin: 5px 0;
+  }
+  
+  .exercise-list {
+    padding-left: 15px;
+    font-size: 0.9em;
+  }
+  
+  .exercise-list li {
+    margin: 5px 0;
+  }
+  
+  /* Nutrition Plan */
+  .nutrition-plan{
+    background-color: white;
+    padding: 2px;
+    height: 265px;
+    border-radius: 8px;    
+  }
+  .meal-plan{
+    margin-left: 25px;
+    margin-top: 13px;
+  }
+  .meal-plan ul {
+    margin-top: 10px;
+    list-style: none;
+    padding: 0;
+  }
+  
+  .meal-plan li {
+    padding: 5px 0;
+    border-bottom: 1px dashed rgba(255, 255, 255, 0.2);
+    display: flex;
+    font-size:14px;  
+}
+
+.meal-plan h3{
+    color: black;
+  }
+  
+  .meal-time {
+    font-weight: bold;
+    min-width: 80px;
+  }
+  
+  /* Print Button */
+  .print-button {
+    background:#570303;
+    color: white;
+    border: none;
+    padding: 10px ;
+    border-radius: 5px;
+    margin-top: 18px;
+    cursor: pointer;
+    font-weight: bold;
+    transition: all 0.2s;
+    width: 100px;
+    margin-left: 470px;
+    position: relative;
+    bottom: -10px;
+    right: 15px;
+  }
+  
+  .print-button:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
+    color: #570303;
+    background-color: white;
+  }
+  
+  ::-webkit-scrollbar {
+    width: 8px;
+  }
+  
+  ::-webkit-scrollbar-thumb {
+    background: rgba(255, 255, 255, 0.3);
+    border-radius: 4px;
+  }
+  
+  @keyframes bounce {
+    0%, 100% {
+      transform: translateY(0);
+    }
+    50% {
+      transform: translateY(-10px);
+    }
+  }

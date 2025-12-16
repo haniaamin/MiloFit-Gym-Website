@@ -1,0 +1,82 @@
+.footer {
+  background-color: black; /* Dark background for modern look */
+  color: white;
+  padding: 20px 20px;
+  text-align: center;
+  font-family: "Poppins", sans-serif;
+
+}
+
+.footer-banner {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 30px;
+  margin-top: 50px;
+}
+
+/* Call Us Now Section */
+.footer-phone h3 {
+  font-size: 22px;
+  font-weight: 600;
+  margin-bottom: 10px;
+  color: red;
+}
+
+.footer-phone p {
+  font-size: 24px;
+  font-weight: bold;
+  color: white;
+}
+
+/* Address Section */
+.footer-address {
+  max-width: 400px;
+  text-align: center;
+  font-size: 16px;
+  line-height: 1.6;
+}
+
+.footer-address h2 {
+  font-size: 20px;
+  color: red;
+  margin-bottom: 10px;
+}
+.footer-address p{
+ color: white;
+}
+/* Social Media Icons */
+.social-icons {
+  display: flex;
+  gap: 20px;
+  justify-content: center;
+}
+
+.social-icon {
+  font-size: 24px;
+  color: white;
+  transition: color 0.3s ease;
+}
+
+.social-icon:hover {
+  color: red;
+  transform: scale(1.1);
+}
+
+/* Quick Links */
+.footer-links {
+  margin-top: 20px;
+}
+
+.footer-links a {
+  color: white;
+  text-decoration: none;
+  font-size: 16px;
+  margin: 0 15px;
+  transition: color 0.3s ease;
+}
+
+.footer-links a:hover {
+  color: red;
+  transform: scale(1.1);
+}

@@ -1,0 +1,231 @@
+.opinions-section {
+  text-align: center;
+  padding: 120px 30px;
+  background: white;
+  position: relative;
+  margin-bottom: 80px; /* Adjust this value as needed */
+}
+  .opinions-title {
+    flex: 1;
+    text-align: left;
+
+  }
+  
+  .opinions-title h2 {
+    font-size: 32px;
+    color:black;
+    font-weight: 700;
+    position: absolute;
+    top: 20px;
+    left: 128px;
+    z-index: 100;
+    display: inline-block;
+  }
+  .opinions-title h2::after {
+    content: "";
+    width: 50px;
+    height: 3px;
+    background: red;
+    position: absolute;
+    left: 80px;
+    bottom: 0px;
+    transform: translateX(-50%);
+    border-radius: 2px;
+  }
+  .opinions-title p {
+    position: absolute;
+    top: -30px;
+    left: 100px;
+    z-index: 100;
+    font-size: 18px;
+    color: #555;
+    line-height: 1.6;
+    margin-top: 15px;
+    max-width: 500px;
+  }
+  /* "+ Your Opinions" Button */
+.add-feedback-btn {
+  position: absolute;
+  top: -10px;
+  right: 100px;
+  z-index: 100;
+  background: red;
+  color: white;
+  padding: 10px 20px;
+  margin-top: 20px;
+  text-decoration: none;
+  border-radius: 15px;
+  font-size: 14px;
+  font-weight: bold;
+  width: fit-content;
+}
+
+.add-feedback-btn:hover {
+background: grey;
+color: white;
+transform: scale(1.05);
+}
+/* Left Side - Image Layout */
+.opinions-images {
+  display: flex;
+  align-items: center;
+  cursor: pointer;
+}
+
+/* Two Images in right */
+.opinions-top {
+  display: flex;
+  flex-direction: column;
+  gap: 35px;
+  position: absolute;
+    top: 100px;
+    left: 250px;
+    z-index: 100;
+}
+
+.GYM1 {
+  width: 100px;
+  height: 100px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 3px solid #fff;
+  box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
+}
+.GYM1:hover {
+  transform: scale(1.1);
+}
+/* Two Image in left */
+.opinions-down{
+  display: flex;
+  flex-direction: column;
+  gap: 35px;
+  position: absolute;
+  top: 100px;
+  left: 100px;
+  z-index: 100;
+}
+.GYM2 {
+  width: 100px;
+  height: 100px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 3px solid #fff;
+  box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
+}
+.GYM2:hover {
+  transform: scale(1.1);
+}
+/* Right Side - Modern Opinion Boxes */
+.opinions-right {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+  position: absolute;
+  right: 50px;  /* Aligns to the right */
+  top: 90px;   /* Adjusts vertical positioning */
+  width: 350px; /* Limits width to avoid stretching */
+  cursor: pointer;
+}
+
+
+/* Opinion Box Styling */
+.opinion-box {
+  background: #f8f8f8;
+  padding: 15px;
+  border-radius: 10px;
+  box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+  text-align: left;
+  width: 100%;
+
+}
+
+.opinion-box h4 {
+  margin: 0;
+  font-size: 16px;
+  color: #333;
+}
+
+.star-rating {
+  color: #ffcc00;
+  font-size: 18px;
+  margin: 5px 0;
+}
+
+.opinion-box p {
+  font-size: 14px;
+  color: #555;
+  margin: 0;
+}
+.opinion-box:hover {
+  transform: scale(1.1);
+}
+
+/* Feedback Form */
+.feedback-form {
+  background: #fff;
+  padding: 20px;
+  border-radius: 10px;
+  width: 300px;
+  margin-top: 20px;
+  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+  position: absolute;
+  bottom: -100px; 
+  left: 470px;
+}
+
+.feedback-form input,
+.feedback-form textarea {
+  width: 100%;
+  padding: 8px;
+  margin-bottom: 10px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  font-weight: bold;
+}
+.feedback-form input:focus,
+.feedback-form select:focus {
+  outline: none;
+  box-shadow: 0 0 0 3px red;
+}
+.feedback-form textarea:focus,
+.feedback-form select:focus {
+  outline: none;
+  box-shadow: 0 0 0 3px red;
+}
+.feedback-form .rating {
+  display: flex;
+  justify-content: center;
+  margin: 10px 0;
+}
+
+.feedback-form .star {
+  font-size: 30px;
+  color: #ddd;
+  cursor: pointer;
+}
+.feedback-form .star:hover {
+  transform: scale(1.3);
+}
+.feedback-form .star.selected {
+  color: #ffcc00;
+  background-color: white;
+}
+.feedback-form .star.selected:hover {
+  transform: scale(1.3);
+}
+
+.submit-feedback-btn {
+  background: red;
+  color: white;
+  padding: 8px 15px;
+  border: none;
+  cursor: pointer;
+  border-radius: 5px;
+  font-weight: bold;
+}
+
+.submit-feedback-btn:hover {
+  background: grey;
+  transform: scale(1.05);
+  color: white;
+}

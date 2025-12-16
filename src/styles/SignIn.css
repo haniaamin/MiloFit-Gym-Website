@@ -1,0 +1,191 @@
+/* ===== Google Fonts ===== */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@500;600;700&family=Inter:wght@400;500;600&display=swap');
+
+
+
+/* ===== Base Styles ===== */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Inter', sans-serif;
+  line-height: 1.5;
+}
+  /* Background Overlay */
+  .signinbackground-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.5); /* Semi-transparent black overlay */
+    z-index: 0;
+    backdrop-filter: blur(5px); /* Blur effect */
+  }
+/* ===== Container ===== */
+.signin-container {
+  background: url("../assets/background.jpg") ;
+    min-width: 100%;
+    min-height: 100%;
+    background-size: cover;
+    background-position: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+   
+}
+/* ===== Sign-in Box ===== */
+.signin-box {
+  background-color: white;
+  width: 100%;
+  max-width: 440px;
+  height: 480px;
+  padding: 2rem;
+  gap: 20px;
+  border-radius: 1rem;
+  box-shadow: 0 12px 24px rgba(0, 0, 0, 0.1);
+  backdrop-filter: blur(8px);
+}
+
+/* ===== Title ===== */
+.signin-title {
+  font-size: 2rem;
+  color: black;
+  text-align: center;
+  margin-bottom: 25px !important;
+  letter-spacing: -0.025em;
+}
+
+/* ===== Form Elements ===== */
+.input-group {
+  position: relative;
+  margin-bottom: 25px !important;
+}
+
+.input-group .icon {
+  position: absolute;
+  left: 1rem;
+  top: 50%;
+  transform: translateY(-50%);
+  color: grey;
+  z-index: 1;
+}
+
+.input-field {
+  width: 100%;
+  padding: 0.875rem 1rem 0.875rem 2.75rem;
+  border: 1px solid black;
+  border-radius: 0.5rem;
+  font-size: 0.9375rem;
+  transition: var(--transition);
+}
+
+
+.input-field input:focus,
+.input-field select:focus {
+  outline: none;
+  box-shadow: 0 0 0 3px red;
+}
+/* ===== Button ===== */
+.signin-btn {
+  background: red !important;
+  color: white;
+  border: none;
+  padding: 10px;
+  width: 100%;
+  border-radius: 5px;
+  cursor: pointer;
+  margin-bottom: 30px !important;
+}
+.signin-btn:hover {
+  background: grey !important;
+  color: white;
+}
+.signup-link a {
+  color: red; /* or your preferred color */
+  text-decoration:underline; /* remove underline */
+  font-weight: bold;
+}
+
+.signup-link a:hover {
+  color:white ; /* hover effect */
+}
+/* ===== Links ===== */
+.terms {
+  color: black;
+  font-size: 0.875rem;
+  text-align: center;
+  margin: 1.5rem 0;
+}
+
+.terms a {
+  color: black;
+  font-weight: 500;
+  text-decoration: underline;
+}
+
+.forgot-password {
+  text-align: right;
+  margin: 1.5rem 0;
+}
+
+.forgot-password a {
+  color: red; /* or your preferred color */
+  text-decoration:underline; /* remove underline */
+  font-weight: bold;
+}
+
+.forgot-password a:hover {
+   color: grey;
+
+}
+
+/* ===== Divider ===== */
+.divider {
+  display: flex;
+  align-items: center;
+  margin: 4rem 0;
+  color: grey;
+}
+
+.divider::before,
+.divider::after {
+  content: '';
+  flex: 1;
+  border-bottom: 1px solid #E5E7EB;
+}
+
+.divider span {
+  padding: 0 1rem;
+  font-size: 0.875rem;
+}
+
+/* ===== Signup CTA ===== */
+.signup-cta {
+  text-align: center;
+  margin-top: 1rem;
+}
+
+.signup-link {
+  display: inline-block;
+  width: 100%;
+  padding: 0.75rem;
+  border: 2px solid;
+  border-radius: 0.5rem;
+  color: black ;
+  font-weight: bold !important;
+  text-decoration: none;
+  transition: red  !important;
+  margin-bottom: 20px !important;
+  background-color: white;
+  cursor: pointer;
+
+}
+
+.signup-link a:hover {
+  color: grey;
+}

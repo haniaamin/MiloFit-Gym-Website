@@ -1,0 +1,23 @@
+.header {
+    position: fixed;
+    top: 10px;
+    left: 20px;
+    z-index: 100;
+}
+
+.logo {
+    width: 100px; /* Adjust size */
+    cursor: pointer;
+    transition: transform 0.2s ease-in-out;
+}
+
+.logo:hover {
+    transform: scale(1.1);
+}
+.header h4{
+    color: white;
+    position: fixed;
+    top: 70px;
+    left: 23px;
+    cursor: pointer;
+}

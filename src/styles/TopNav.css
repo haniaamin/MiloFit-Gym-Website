@@ -1,0 +1,142 @@
+/* Top Navigation Bar */
+.topnav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: transparent; /* Red Transparent Background */
+  padding: 10px 20px;
+  color: white;
+  position: relative;
+  width: 100%;
+}
+
+/* Left Side: Completed Workouts & Days Remaining */
+.workout-days {
+  display: flex;
+  position: relative;
+  font-size: 14px;
+  font-weight: bold;
+  left: 200px;
+  cursor:pointer;
+}
+
+.current-weight {
+  background: white;
+  color: black;
+  padding: 5px 10px;
+  border-radius: 15px;
+  position: relative;
+  left: 23px;
+}
+
+.days-remaining {
+  background: #d80202;
+  color: white;
+  padding: 5px 10px;
+  border-radius: 15px;
+  width: 170px;
+  text-align-last: right;
+}
+
+/* Right Side: Notifications & Profile */
+.topnav-right {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  position: relative;
+  right: 10px;
+}
+
+/* Notification Bell */
+.traineenotification-icon {
+  position: relative;
+  cursor: pointer;
+  color: red;
+}
+.traineenotification-icon:hover {
+  transform: scale(1.2);
+}
+.traineenotification-icon .traineenotification-badge {
+  background-color: red;
+  color: white;
+  font-size: 11px;
+  font-weight: bold;
+  padding: 2px 6px;
+  border-radius: 20px;
+  box-shadow: 0 0 4px rgba(0, 0, 0, 0.5);
+}
+
+
+
+/* Notifications Panel */
+.traineenotifications-panel {
+  position: absolute;
+  top: 60px;
+  right: 10px;
+  background: rgba(255, 255, 255, 0.9);
+  color: black;
+  border-radius: 10px;
+  padding: 10px;
+  width: 250px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+  z-index: 10;
+
+  max-height: 300px;      /* 🔥 sets max visible height */
+  overflow-y: auto;       /* 🔥 enables vertical scroll if needed */
+  scrollbar-width: thin;  /* optional: thin scrollbar for Firefox */
+}
+.traineenotifications-panel::-webkit-scrollbar {
+  width: 6px;
+}
+.traineenotifications-panel::-webkit-scrollbar-thumb {
+  background-color: #888;
+  border-radius: 10px;
+}
+.traineenotifications-panel::-webkit-scrollbar-thumb:hover {
+  background-color: #555;
+}
+
+.traineenotifications-panel h4 {
+  font-size: 16px;
+  margin-bottom: 10px;
+}
+
+.traineenotification-item {
+  background: linear-gradient(135deg, #9c3737, rgb(44, 42, 42));
+  color: white;
+  padding: 8px;
+  border-radius: 5px;
+  margin-bottom: 5px;
+  height: 50%;
+}
+.traineenotification-item p{
+  color: white;
+}
+.traineedelete-all-btn {
+  width: 100%;
+  padding: 5px;
+  background-color: #570303;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+/* Profile Dropdown */
+.topnavprofile-btn {
+  display: inline-block;
+  background: #d80202;
+  color: white;
+  padding: 10px 20px;
+  text-decoration: none;
+  border-radius: 15px;
+  font-size: 14px;
+  font-weight: bold;
+  position: relative;
+  bottom: 10px;
+}
+.topnavprofile-btn:hover {
+  background: #d80202;
+  color: white;
+  transform: scale(1.05);
+}
