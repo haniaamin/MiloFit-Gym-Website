@@ -7,6 +7,8 @@ import { FaFacebookF, FaInstagram, FaWhatsapp } from "react-icons/fa"; // Import
 import Opinions from "../components/Opinions.js"; // Import the Opinions component
 import Footer from "../components/Footer.js"; // Import the Footer component
 import "../styles/Homepage.css";
+import "../styles/Header.css";
+import logo from "../assets/logo.png";
 import why1 from "../assets/1.jpg";
 import why2 from "../assets/2.jpg";
 import why3 from "../assets/3.jpg";
@@ -19,6 +21,7 @@ import Miloo from "../assets/Miloo.jpg";
 const [scrolled, setScrolled] = useState(false);
 const [scrollDirection, setScrollDirection] = useState("up");
 const [lastScrollY, setLastScrollY] = useState(0);
+const [menuOpen, setMenuOpen] = useState(false);
 
 useEffect(() => {
   const handleScroll = () => {
@@ -36,33 +39,129 @@ useEffect(() => {
   return (
     <div className="homepage">
      {/* Navigation */}
-<nav className={`navbar ${scrolled ? 'scrolled' : ''} ${scrollDirection === 'down' ? 'hide' : 'show'}`}>
+<nav
+  className={`navbar ${
+    scrolled ? "scrolled" : ""
+  } ${
+    scrollDirection === "down"
+      ? "hide"
+      : "show"
+  }`}
+>
+
   <div className="nav-container">
-    <ScrollLink to="home" smooth={true} duration={500} className="nav-link">Home</ScrollLink>
-    <ScrollLink to="about" smooth={true} duration={500} className="nav-link">About Us</ScrollLink>
-    <ScrollLink to="services" smooth={true} duration={500} className="nav-link">Services</ScrollLink>
-    <ScrollLink to="footer" smooth={true} duration={500} className="nav-link">Contact Us</ScrollLink>
+
+    
+    <div className="nav-left">
+
+      <Link
+  to="/" onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })}
+  className="logo-container"
+>
+  <img
+    src={logo}
+    alt="MiloFit Gym Logo"
+    className="logo"
+  />
+
+  <h4 className="gym-name">
+    MiloFit Gym
+  </h4>
+</Link>
+
+    </div>
+
+    
+    <div
+      className="menu-toggle"
+      onClick={() =>
+        setMenuOpen(!menuOpen)
+      }
+    >
+      ☰
+    </div>
+
+    
+    <div
+      className={`nav-links ${
+        menuOpen ? "active" : ""
+      }`}
+    >
+
+      <ScrollLink
+        to="home"
+        smooth={true}
+        duration={500}
+        className="nav-link"
+        onClick={() =>
+          setMenuOpen(false)
+        }
+      >
+        Home
+      </ScrollLink>
+
+      <ScrollLink
+        to="about"
+        smooth={true}
+        duration={500}
+        className="nav-link"
+        onClick={() =>
+          setMenuOpen(false)
+        }
+      >
+        About Us
+      </ScrollLink>
+
+      <ScrollLink
+        to="services"
+        smooth={true}
+        duration={500}
+        className="nav-link"
+        onClick={() =>
+          setMenuOpen(false)
+        }
+      >
+        Services
+      </ScrollLink>
+
+      <ScrollLink
+        to="footer"
+        smooth={true}
+        duration={500}
+        className="nav-link"
+        onClick={() =>
+          setMenuOpen(false)
+        }
+      >
+        Contact
+      </ScrollLink>
+
+    </div>
+
   </div>
-  <div className="join">
-    <Link to="/sign-in" className="join-now">Join Now</Link>
-  </div>
+
 </nav>
 
 
 
       {/* Home Section */}
       <section className="home" id="home">
-        <div className="overlay">
-          <h1>Your Path to</h1>
-          <h1>Fitness</h1>
-          <h1>Excellence</h1>
+        <div className="hero-left">
+          
         </div>
-        <div className="socials">
-          <a href="https://wa.me/+2001272885923" className="social"><FaWhatsapp /></a>
-          <a href="https://www.facebook.com/share/168wpNsmMG/?mibextid=wwXIfr" className="social"><FaFacebookF /></a>
-          <a href="https://www.instagram.com/milo_gym?igsh=cXN6N2x6N3Q2cnFm" className="social"><FaInstagram /></a>
+        <div className="hero-content ">
+          <div className="overlay">
+            <h1>Your Path to</h1>
+            <h1>Fitness</h1>
+            <h1>Excellence</h1>
+          </div>
+          <div className="socials">
+            <a href="https://wa.me/+2001272885923" className="social"><FaWhatsapp /></a>
+            <a href="https://www.facebook.com/share/168wpNsmMG/?mibextid=wwXIfr" className="social"><FaFacebookF /></a>
+            <a href="https://www.instagram.com/milo_gym?igsh=cXN6N2x6N3Q2cnFm" className="social"><FaInstagram /></a>
+          </div>
+          <Link to="/sign-in" className="get-started-btn">Get Started</Link>
         </div>
-        <div className="join"><Link to="/sign-in" className="join-now">Join Now</Link></div>
       </section>
 
       {/* Stats Section */}

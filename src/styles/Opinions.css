@@ -1,231 +1,460 @@
 .opinions-section {
-  text-align: center;
-  padding: 120px 30px;
-  background: white;
-  position: relative;
-  margin-bottom: 80px; /* Adjust this value as needed */
+  padding: 80px 6%;
+  overflow: hidden;
 }
-  .opinions-title {
-    flex: 1;
-    text-align: left;
 
-  }
-  
-  .opinions-title h2 {
-    font-size: 32px;
-    color:black;
-    font-weight: 700;
-    position: absolute;
-    top: 20px;
-    left: 128px;
-    z-index: 100;
-    display: inline-block;
-  }
-  .opinions-title h2::after {
-    content: "";
-    width: 50px;
-    height: 3px;
-    background: red;
-    position: absolute;
-    left: 80px;
-    bottom: 0px;
-    transform: translateX(-50%);
-    border-radius: 2px;
-  }
-  .opinions-title p {
-    position: absolute;
-    top: -30px;
-    left: 100px;
-    z-index: 100;
-    font-size: 18px;
-    color: #555;
-    line-height: 1.6;
-    margin-top: 15px;
-    max-width: 500px;
-  }
-  /* "+ Your Opinions" Button */
-.add-feedback-btn {
-  position: absolute;
-  top: -10px;
-  right: 100px;
-  z-index: 100;
+/* =========================
+   HEADER
+========================= */
+
+.opinions-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 20px;
+  margin-bottom: 60px;
+  flex-wrap: wrap;
+}
+
+.subtitle {
+  color: #999;
+  margin-bottom: 10px;
+  font-size: 16px;
+}
+
+.opinions-header h2 {
+  font-size: 48px;
+  font-weight: 800;
+  color: #444;
+}
+
+/* =========================
+   BUTTON
+========================= */
+
+.add-btn {
   background: red;
   color: white;
-  padding: 10px 20px;
-  margin-top: 20px;
-  text-decoration: none;
-  border-radius: 15px;
-  font-size: 14px;
+  border: none;
+  padding: 14px 24px;
+  width: 220px;
+  border-radius: 12px;
   font-weight: bold;
-  width: fit-content;
-}
-
-.add-feedback-btn:hover {
-background: grey;
-color: white;
-transform: scale(1.05);
-}
-/* Left Side - Image Layout */
-.opinions-images {
-  display: flex;
-  align-items: center;
   cursor: pointer;
+  transition: 0.3s ease;
 }
 
-/* Two Images in right */
-.opinions-top {
-  display: flex;
-  flex-direction: column;
-  gap: 35px;
-  position: absolute;
-    top: 100px;
-    left: 250px;
-    z-index: 100;
+.add-btn:hover {
+  background: #e0433a;
 }
 
-.GYM1 {
-  width: 100px;
-  height: 100px;
-  border-radius: 50%;
+/* =========================
+   MAIN LAYOUT
+========================= */
+
+.opinions-layout {
+  display: grid;
+  grid-template-columns: 280px 1fr;
+  gap: 50px;
+  align-items: start;
+}
+
+/* =========================
+   IMAGES
+========================= */
+
+.images-side {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 20px;
+}
+
+.images-side img {
+  width: 120px;
+  height: 120px;
   object-fit: cover;
-  border: 3px solid #fff;
-  box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
-}
-.GYM1:hover {
-  transform: scale(1.1);
-}
-/* Two Image in left */
-.opinions-down{
-  display: flex;
-  flex-direction: column;
-  gap: 35px;
-  position: absolute;
-  top: 100px;
-  left: 100px;
-  z-index: 100;
-}
-.GYM2 {
-  width: 100px;
-  height: 100px;
   border-radius: 50%;
-  object-fit: cover;
-  border: 3px solid #fff;
-  box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
+  box-shadow: 0 5px 20px rgba(0,0,0,0.12);
 }
-.GYM2:hover {
-  transform: scale(1.1);
+
+/* =========================
+   REVIEWS
+========================= */
+
+.reviews-side {
+  width: 100%;
 }
-/* Right Side - Modern Opinion Boxes */
-.opinions-right {
+
+.reviews-row {
   display: flex;
-  flex-direction: column;
-  gap: 15px;
-  position: absolute;
-  right: 50px;  /* Aligns to the right */
-  top: 90px;   /* Adjusts vertical positioning */
-  width: 350px; /* Limits width to avoid stretching */
-  cursor: pointer;
+  gap: 25px;
+  flex-wrap: wrap;
+  justify-content: center;
 }
 
+.review-card {
+  flex: 1 1 300px;
+  max-width: 420px;
 
-/* Opinion Box Styling */
-.opinion-box {
-  background: #f8f8f8;
-  padding: 15px;
-  border-radius: 10px;
-  box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
-  text-align: left;
-  width: 100%;
+  background: white;
 
-}
+  border-radius: 24px;
 
-.opinion-box h4 {
-  margin: 0;
-  font-size: 16px;
-  color: #333;
+  padding: 30px;
+
+  box-shadow: 0 5px 20px rgba(0,0,0,0.08);
+
+  min-height: 220px;
 }
 
-.star-rating {
-  color: #ffcc00;
-  font-size: 18px;
-  margin: 5px 0;
+.review-card h3 {
+  font-size: 24px;
+  margin-bottom: 14px;
+  color: #444;
 }
 
-.opinion-box p {
-  font-size: 14px;
-  color: #555;
-  margin: 0;
-}
-.opinion-box:hover {
-  transform: scale(1.1);
+.stars {
+  margin-bottom: 18px;
+  font-size: 22px;
+  color: #ffb400;
 }
 
-/* Feedback Form */
-.feedback-form {
-  background: #fff;
-  padding: 20px;
-  border-radius: 10px;
-  width: 300px;
-  margin-top: 20px;
-  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
-  position: absolute;
-  bottom: -100px; 
-  left: 470px;
+.review-card p {
+  color: #777;
+  line-height: 1.8;
+  font-size: 15px;
 }
 
-.feedback-form input,
-.feedback-form textarea {
-  width: 100%;
-  padding: 8px;
-  margin-bottom: 10px;
-  border: 1px solid #ccc;
-  border-radius: 5px;
-  font-weight: bold;
-}
-.feedback-form input:focus,
-.feedback-form select:focus {
-  outline: none;
-  box-shadow: 0 0 0 3px red;
-}
-.feedback-form textarea:focus,
-.feedback-form select:focus {
-  outline: none;
-  box-shadow: 0 0 0 3px red;
-}
-.feedback-form .rating {
+/* =========================
+   SLIDER BUTTONS
+========================= */
+
+.slider-buttons {
   display: flex;
   justify-content: center;
-  margin: 10px 0;
+  gap: 14px;
+  margin-top: 35px;
 }
 
-.feedback-form .star {
-  font-size: 30px;
-  color: #ddd;
+.slider-buttons button {
+  width: 52px;
+  height: 52px;
+
+  border-radius: 50%;
+
+  border: none;
+
   cursor: pointer;
-}
-.feedback-form .star:hover {
-  transform: scale(1.3);
-}
-.feedback-form .star.selected {
-  color: #ffcc00;
-  background-color: white;
-}
-.feedback-form .star.selected:hover {
-  transform: scale(1.3);
+
+  font-size: 22px;
+
+  transition: 0.3s ease;
+
+  box-shadow: 0 4px 15px rgba(0,0,0,0.1);
 }
 
-.submit-feedback-btn {
+.slider-buttons button:first-child {
   background: red;
   color: white;
-  padding: 8px 15px;
-  border: none;
-  cursor: pointer;
-  border-radius: 5px;
-  font-weight: bold;
 }
 
-.submit-feedback-btn:hover {
-  background: grey;
-  transform: scale(1.05);
+.slider-buttons button:last-child {
+  background: #444;
   color: white;
+}
+
+.slider-buttons button:hover {
+  transform: scale(1.08);
+}
+
+.slider-buttons button:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+/* =========================
+   POPUP
+========================= */
+
+.popup-overlay {
+  position: fixed;
+  inset: 0;
+
+  background: rgba(0,0,0,0.55);
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  z-index: 999;
+}
+
+.popup {
+  background: white;
+
+  width: 90%;
+  max-width: 500px;
+
+  border-radius: 24px;
+
+  padding: 35px;
+
+  position: relative;
+}
+
+.popup h3 {
+  color: #333;
+  font-size: 28px;
+  margin-bottom: 25px;
+}
+
+.popup input,
+.popup textarea {
+  width: 100%;
+
+  padding: 14px;
+
+  border-radius: 12px;
+
+  border: 1px solid #ddd;
+
+  margin-bottom: 20px;
+
+  font-size: 15px;
+}
+
+.popup textarea {
+  min-height: 120px;
+  resize: none;
+}
+
+/* =========================
+   RATING
+========================= */
+
+.rating {
+  display: flex;
+  gap: 10px;
+  margin-bottom: 25px;
+  flex-wrap: wrap;
+}
+
+.rating span {
+  font-size: 34px;
+  color: #ccc;
+  cursor: pointer;
+  transition: 0.2s ease;
+}
+
+.rating span:hover {
+  transform: scale(1.1);
+}
+
+.rating .active {
+  color: gold;
+}
+
+/* =========================
+   SUBMIT BUTTON
+========================= */
+
+.submit-btn {
+  width: 100%;
+
+  padding: 16px;
+
+  border: none;
+
+  background: #ff4d3d;
+
+  color: white;
+
+  border-radius: 12px;
+
+  font-size: 18px;
+
+  cursor: pointer;
+
+  transition: 0.3s ease;
+}
+
+.submit-btn:hover {
+  background: #e0433a;
+}
+
+/* =========================
+   CLOSE BUTTON
+========================= */
+
+.close-btn {
+  position: absolute;
+
+  top: 18px;
+  right: 18px;
+
+  width: 40px;
+  height: 40px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  border: none;
+  border-radius: 50%;
+
+  background: #f5f5f5;
+
+  font-size: 22px;
+  font-weight: bold;
+
+  cursor: pointer;
+
+  color: #333;
+
+  transition: all 0.3s ease;
+}
+
+.close-btn:hover {
+  background: red;
+  color: white;
+  transform: rotate(90deg);
+}
+/* =========================
+   TABLET
+========================= */
+
+@media (max-width: 992px) {
+
+  .opinions-layout {
+    grid-template-columns: 1fr;
+  }
+
+  .images-side {
+    justify-content: center;
+    margin: auto;
+  }
+
+  .reviews-row {
+    justify-content: center;
+  }
+
+}
+
+/* =========================
+   MOBILE
+========================= */
+
+@media (max-width: 768px) {
+
+  .opinions-section {
+    padding: 60px 20px;
+  }
+
+  .opinions-header {
+    flex-direction: column;
+    text-align: center;
+    align-items: center;
+    margin-bottom: 40px;
+  }
+
+  .opinions-header h2 {
+    font-size: 34px;
+  }
+
+  .add-btn {
+    width: 100%;
+    max-width: 260px;
+  }
+   .close-btn {
+    top: 10px;
+    right: 14px;
+
+    width: 36px;
+    height: 36px;
+
+    font-size: 20px;
+  }
+
+  .opinions-layout {
+    grid-template-columns: 1fr;
+    gap: 40px;
+  }
+
+  .images-side {
+    grid-template-columns: repeat(2, 1fr);
+    justify-items: center;
+    gap: 18px;
+  }
+
+  .images-side img {
+    width: 100px;
+    height: 100px;
+  }
+
+  .reviews-row {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .review-card {
+    width: 100%;
+    max-width: 100%;
+    min-height: auto;
+    padding: 24px;
+  }
+
+  .review-card h3 {
+    font-size: 20px;
+  }
+
+  .review-card p {
+    font-size: 14px;
+  }
+
+  .slider-buttons {
+    margin-top: 25px;
+  }
+
+  .popup {
+    padding: 25px;
+  }
+
+  .popup h3 {
+    font-size: 24px;
+  }
+
+}
+
+/* =========================
+   SMALL MOBILE
+========================= */
+
+@media (max-width: 480px) {
+
+  .opinions-header h2 {
+    font-size: 28px;
+  }
+
+  .images-side img {
+    width: 85px;
+    height: 85px;
+  }
+
+  .review-card {
+    padding: 20px;
+  }
+
+  .stars {
+    font-size: 18px;
+  }
+
+  .rating span {
+    font-size: 28px;
+  }
+
+  .slider-buttons button {
+    width: 46px;
+    height: 46px;
+  }
+
 }

@@ -18,7 +18,7 @@ const TraineeFeedback = () => {
       id: 1,
       rating: 4,
       name: 'Muhammad Abdel Atty',
-      comment: 'A clean place, full of professional equipment and professional coaches. Very good light, very good air. I recommend it if you\'re looking for a place that helps you to be a champion.',
+      comment: 'A clean place, full of professional equipment and coaches. ',
       date: '4 years ago',
       ratingsCount: 32,
       profilePic: profile1

@@ -81,7 +81,7 @@
   background-color: #570303;
 }
 
-.trainer-list li.selected .trainer-name {
+.trainer-list li.selected .trainers-name {
   color: white;
 }
 
@@ -108,7 +108,7 @@
   flex-direction: column;
 }
 
-.trainer-name {
+.trainers-name {
   font-weight: 500;
   font-size: 15px;
   color: #333;

@@ -3,11 +3,11 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
-  background: transparent; /* Red Transparent Background */
+background: transparent; /* Red Transparent Background */
   padding: 10px 20px;
   color: white;
-  position: relative;
-  width: 100%;
+    position: relative;
+width: 100%;
 }
 
 /* Left Side: Completed Workouts & Days Remaining */
@@ -23,7 +23,7 @@
 .current-weight {
   background: white;
   color: black;
-  padding: 5px 10px;
+padding: 5px 10px;
   border-radius: 15px;
   position: relative;
   left: 23px;
@@ -32,7 +32,7 @@
 .days-remaining {
   background: #d80202;
   color: white;
-  padding: 5px 10px;
+padding: 5px 10px;
   border-radius: 15px;
   width: 170px;
   text-align-last: right;
@@ -57,10 +57,10 @@
   transform: scale(1.2);
 }
 .traineenotification-icon .traineenotification-badge {
-  background-color: red;
+    background-color: red;
   color: white;
   font-size: 11px;
-  font-weight: bold;
+font-weight: bold;
   padding: 2px 6px;
   border-radius: 20px;
   box-shadow: 0 0 4px rgba(0, 0, 0, 0.5);
@@ -75,7 +75,7 @@
   right: 10px;
   background: rgba(255, 255, 255, 0.9);
   color: black;
-  border-radius: 10px;
+    border-radius: 10px;
   padding: 10px;
   width: 250px;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
@@ -124,19 +124,19 @@
 
 /* Profile Dropdown */
 .topnavprofile-btn {
-  display: inline-block;
+    display: inline-block;
   background: #d80202;
   color: white;
   padding: 10px 20px;
   text-decoration: none;
-  border-radius: 15px;
+    border-radius: 15px;
   font-size: 14px;
   font-weight: bold;
   position: relative;
   bottom: 10px;
-}
+  }
 .topnavprofile-btn:hover {
   background: #d80202;
   color: white;
   transform: scale(1.05);
-}
+  }

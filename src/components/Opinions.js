@@ -1,133 +1,378 @@
 import React, { useState, useEffect } from "react";
 import axios from "axios";
-import "../styles/Opinions.css"; // Ensure this CSS is updated
+
+import "../styles/Opinions.css";
+
 import opinion1 from "../assets/opinion1.jpg";
 import opinion2 from "../assets/opinion2.jpg";
 import opinion3 from "../assets/opinion3.jpg";
 import opinion4 from "../assets/opinion4.jpg";
 
-const Opinions = () => {
-  const [feedbacks, setFeedbacks] = useState([]);
-  const [showInput, setShowInput] = useState(false);
-  const [name, setName] = useState("");
-  const [opinion, setOpinion] = useState("");
-  const [rating, setRating] = useState(0);
-  
+export default function Opinions() {
 
-  // Default Ratings & Reviews
+  const [feedbacks, setFeedbacks] =
+    useState([]);
+
+  const [showInput, setShowInput] =
+    useState(false);
+
+  const [name, setName] = useState("");
+
+  const [opinion, setOpinion] =
+    useState("");
+
+  const [rating, setRating] =
+    useState(0);
+
+  const [currentSlide, setCurrentSlide] =
+    useState(0);
+
+  
   const defaultReviews = [
     {
       name: "Karim El Alem",
-      rating: 5,
-      review: "One of the best gyms in Alexandria especially for athletes.",
+      rating: 4,
+      opinion:
+        "One of the best gyms in Alexandria especially for athletes.",
     },
+
     {
       name: "Yacoub Amr",
       rating: 4,
-      review: "A place where champions are made.",
+      opinion:
+        "A place where champions are made.",
     },
   ];
 
-  // Fetch feedbacks from backend
+  
   useEffect(() => {
+
     axios
-      .get("http://localhost:5000/api/feedback/get-feedback")
-      .then((response) => setFeedbacks(response.data))
-      .catch((error) => console.error("Error fetching feedbacks:", error));
+      .get(
+        "http://localhost:5000/api/feedback/get-feedback"
+      )
+      .then((res) => {
+
+        setFeedbacks(res.data);
+
+      })
+      .catch((err) =>
+        console.log(err)
+      );
+
   }, []);
 
-  // Handle feedback submission
-  const submitFeedback = () => {
-    if (!name || !opinion || rating === 0) {
-      alert("Please enter all fields and select a rating!");
+  
+  const allReviews = [
+    ...defaultReviews,
+    ...feedbacks,
+  ];
+
+  
+  const visibleReviews =
+    allReviews.slice(
+      currentSlide,
+      currentSlide + 2
+    );
+
+  
+  function nextSlide() {
+
+    if (
+      currentSlide <
+      allReviews.length - 2
+    ) {
+
+      setCurrentSlide(
+        currentSlide + 1
+      );
+    }
+  }
+
+  
+  function prevSlide() {
+
+    if (currentSlide > 0) {
+
+      setCurrentSlide(
+        currentSlide - 1
+      );
+    }
+  }
+
+  
+  function submitFeedback() {
+
+    if (
+      !name ||
+      !opinion ||
+      rating === 0
+    ) {
+
+      alert(
+        "Please fill all fields"
+      );
+
       return;
     }
 
-    const newFeedback = { name, opinion, rating };
+    const newFeedback = {
+      name,
+      opinion,
+      rating,
+    };
+
     axios
-      .post("http://localhost:5000/api/feedback/add-feedback", newFeedback)
+      .post(
+        "http://localhost:5000/api/feedback/add-feedback",
+        newFeedback
+      )
       .then(() => {
-        alert("Feedback submitted!");
-        setFeedbacks([newFeedback, ...feedbacks]);
+
+        const updated = [
+          ...feedbacks,
+          newFeedback,
+        ];
+
+        setFeedbacks(updated);
+
         setShowInput(false);
+
         setName("");
         setOpinion("");
         setRating(0);
+
+        
+        if (
+          updated.length +
+            defaultReviews.length >
+          2
+        ) {
+
+          setCurrentSlide(
+            updated.length +
+              defaultReviews.length -
+              2
+          );
+        }
+
       })
-      .catch((error) => console.error("Error submitting feedback:", error));
-  };
+      .catch((err) =>
+        console.log(err)
+      );
+  }
 
   return (
-    <div className="opinions-section">
-      <div className="opinions-title">
-      <p>Reviews 88% recommend</p>
-        <h2>OPINIONS</h2>
+
+    <section className="opinions-section">
+
+      
+      <div className="opinions-header">
+
+        <div>
+
+          <p className="subtitle">
+            Reviews 88% recommend
+          </p>
+
+          <h2>
+            YOUR OPINIONS
+          </h2>
+
         </div>
-        <div> 
-          <button className="add-feedback-btn" onClick={() => setShowInput(!showInput)}>
+
+        <button
+          className="add-btn"
+          onClick={() =>
+            setShowInput(true)
+          }
+        >
           + Your Opinions
         </button>
+
+      </div>
+
+      
+      <div className="opinions-layout">
+
+        
+        <div className="images-side">
+
+          <img
+            src={opinion1}
+            alt=""
+          />
+
+          <img
+            src={opinion2}
+            alt=""
+          />
+
+          <img
+            src={opinion3}
+            alt=""
+          />
+
+          <img
+            src={opinion4}
+            alt=""
+          />
+
         </div>
 
-       {/* Top section with photos and "+ Your Opinions" button */}
-      <div className="opinions-images">
-          <div className="opinions-top">
-          <img src={opinion1} alt="Gym 1" className="GYM1"/>
-          <img src={opinion2} alt="Gym 2" className="GYM1"/>
+        
+        <div className="reviews-side">
+
+          <div className="reviews-row">
+
+            {visibleReviews.map(
+              (review, index) => (
+
+                <div
+                  key={index}
+                  className="review-card"
+                >
+
+                  <h3>
+                    {review.name}
+                  </h3>
+
+                  <div className="stars">
+                    {"★".repeat(
+                      review.rating
+                    )}
+
+                    {"☆".repeat(
+                      5 -
+                        review.rating
+                    )}
+                  </div>
+
+                  <p>
+                    {review.opinion}
+                  </p>
+
+                </div>
+
+              )
+            )}
+
           </div>
-          <div className="opinions-down">
-          <img src={opinion3} alt="Gym 3" className="GYM2" />
-          <img src={opinion4} alt="Gym 4" className="GYM2" />
-          </div>
+
+          
+          {allReviews.length > 2 && (
+
+            <div className="slider-buttons">
+
+              <button
+                onClick={prevSlide}
+                disabled={
+                  currentSlide === 0
+                }
+              >
+                ❮
+              </button>
+
+              <button
+                onClick={nextSlide}
+                disabled={
+                  currentSlide >=
+                  allReviews.length -
+                    2
+                }
+              >
+                ❯
+              </button>
+
+            </div>
+
+          )}
+
+        </div>
+
       </div>
 
-       {/* Right Side - Modern Opinion Boxes */}
-      <div className="opinions-right">
-        {defaultReviews.map((review, index) => (
-          <div key={index} className="opinion-box">
-            <h4>{review.name}</h4>
-            <div className="star-rating">{"⭐".repeat(review.rating)}</div>
-            <p>{review.review}</p>
-          </div>
-        ))}
-      </div>
-
-      {/* Feedback Form */}
       
       {showInput && (
-        <div className="feedback-form">
-          <input
-            type="text"
-            placeholder="Your Name"
-            value={name}
-            onChange={(e) => setName(e.target.value)}
-          />
-          <textarea
-            placeholder="Write your opinion..."
-            value={opinion}
-            onChange={(e) => setOpinion(e.target.value)}
-          ></textarea>
 
-          {/* Star Rating System */}
-          <div className="rating">
-            {[1, 2, 3, 4, 5].map((star) => (
-              <span
-                key={star}
-                className={star <= rating ? "star selected" : "star"}
-                onClick={() => setRating(star)}
-              >
-                ★
-              </span>
-            ))}
+        <div className="popup-overlay">
+
+          <div className="popup">
+
+            <button
+              className="close-btn"
+              onClick={() =>
+                setShowInput(false)
+              }
+            >
+              ✕
+            </button>
+
+            <h3>
+              Add Your Opinion
+            </h3>
+
+            <input
+              type="text"
+              placeholder="Your Name"
+              value={name}
+              onChange={(e) =>
+                setName(
+                  e.target.value
+                )
+              }
+            />
+
+            <textarea
+              placeholder="Write your opinion..."
+              value={opinion}
+              onChange={(e) =>
+                setOpinion(
+                  e.target.value
+                )
+              }
+            />
+
+            
+            <div className="rating">
+
+              {[1, 2, 3, 4, 5].map(
+                (star) => (
+
+                  <span
+                    key={star}
+                    className={
+                      star <= rating
+                        ? "active"
+                        : ""
+                    }
+                    onClick={() =>
+                      setRating(star)
+                    }
+                  >
+                    ★
+                  </span>
+
+                )
+              )}
+
+            </div>
+
+            <button
+              className="submit-btn"
+              onClick={
+                submitFeedback
+              }
+            >
+              Submit
+            </button>
+
           </div>
 
-          <button onClick={submitFeedback} className="submit-feedback-btn">
-            Submit
-          </button>
         </div>
-      )}
-    </div>
-  );
-};
 
-export default Opinions;
+      )}
+
+    </section>
+  );
+}

@@ -5,34 +5,55 @@
 }
 /* Home Section */
 .home {
-  background: url("../assets/home.jpg") ;
-  min-width: 100%;
-  min-height: 100%;
+  background: url("../assets/home.jpg");
+  width: 100%;
+  min-height: 100vh;
   background-size: cover;
   background-position: center;
   display: flex;
-  justify-content: center;
-  align-items: center;
-  height: 650px;
-  left: 200px;
+  justify-content: space-between;
+  align-items: flex-start;
+  padding-top: 120px;
+  padding-left: 40px;
+  padding-right: 40px;
+  position: relative;
+}
+
+.hero-left {
+  display: flex;
+  align-items: flex-start;
+  z-index: 50;
+  flex-shrink: 0;
+}
+
+
+
+.hero-content {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  z-index: 50;
+  flex: 1;
+  margin-top:40px
 }
 /* Navbar Container */
 .navbar {
-  background:transparent;
-  padding: 15px 0;
+  background: transparent;
+  padding: 16px 28px;
   width: 100%;
   position: fixed; /* Sticks to top */
   top: 0;
   left: 0;
   z-index: 1000; /* Keeps it on top */
-  transition: background 0.3s ease-in-out;
+  transform: translateY(0);
+  transition: transform 0.3s ease, background 0.3s ease-in-out;
 }
 .navbar.scrolled {
   background: rgba(0, 0, 0, 0.85);
   box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
 }
 .navbar.hide {
-  transform: translateY(-100%);
+  transform: translateY(-110%);
 }
 
 .navbar.show {
@@ -41,10 +62,30 @@
 /* Navbar Flexbox for Centering Links */
 .nav-container {
   display: flex;
-  justify-content: center;
+  justify-content: space-between;
   align-items: center;
-  gap: 30px; /* Space between links */
+  width: 100%;
+
 }
+
+.nav-left {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+
+.nav-links {
+  display: flex;
+  align-items: center;
+  gap: 32px;
+  margin-left: auto;
+}
+
+.nav-cta {
+  display: none;
+}
+
 /* Navigation Links */
 .nav-link {
   color: white;
@@ -74,59 +115,89 @@
 }
 
 .overlay {
-  position:absolute;
-  top: 150px;
-  left: 35px;
+  position: relative;
+  top: 0;
+  left: 0;
   z-index: 100;
-  font-size: 30px;
-  width: 400px;
+  font-size: 42px;
+  width: auto;
+  margin-bottom: 30px;
 }
+
+.overlay h1 {
+  margin: 0;
+  line-height: 1.1;
+  font-weight: 700;
+}
+
 .home .socials img {
   width: 30px;
-  margin: 0 200px;
+  margin: 0 10px;
 }
 .socials {
-  position:absolute;
-  top: 420px;
-  left: 65px;
+  position: relative;
+  top: 0;
+  left: 0;
   z-index: 100;
   font-size: 30px;
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  margin-bottom: 30px;
 }
 
 .social {
   font-size: 30px;
-  color: #fff; /* Change color to match Figma */
+  color: #fff;
   transition: color 0.3s ease-in-out;
-  padding: 10px;
+  padding: 8px;
+  cursor: pointer;
+  text-decoration: none;
 }
 
 .social:hover {
-  color: red; /* Change hover color */
-  transform: scale(1.1);
+  color: red;
+  transform: scale(1.2);
 }
 
-.join {
-  position: fixed;
-  top: 0px;
-  right: 30px;
-  z-index: 100;
+.get-started-btn {
+  display: inline-block;
+  background: rgb(224, 0, 0);
+  color: white;
+  padding: 12px 28px;
+  text-decoration: none;
+  border-radius: 20px;
+  font-size: 16px;
+  font-weight: bold;
+  cursor: pointer;
+  transition: all 0.3s ease-in-out;
+  border: none;
+}
+
+.get-started-btn:hover {
+  background: #d80202;
+  transform: scale(1.05);
+}
+
+.nav-cta {
+  display: none;
+}
+
+.hero-join {
+  position: relative;
 }
 .join-now {
   display: inline-block;
   background: rgb(224, 0, 0);
   color: white;
   padding: 10px 20px;
-  margin-top: 20px;
   text-decoration: none;
   border-radius: 15px;
   font-size: 14px;
   font-weight: bold;
+  display: none;
 }
-.join-now:hover {
-  background: grey;
-  color: white;
-  transform: scale(1.05);
-}
+
 /* Stats Section */
 .stats {
   display: flex;
@@ -464,6 +535,282 @@ margin-bottom: 10px;
 
 /* 🔥 Hover Effect */
 .service-box:hover {
-transform: translateY(-5px);
-box-shadow: 0 6px 15px rgba(0, 0, 0, 0.2);
-} 
+  transform: translateY(-5px);
+  box-shadow: 0 6px 15px rgba(0, 0, 0, 0.2);
+}
+
+.menu-toggle {
+  display: none;
+  font-size: 32px;
+  color: white;
+  cursor: pointer;
+}
+
+@media (max-width: 768px) {
+  .navbar {
+    padding: 10px 14px;
+  }
+
+  .nav-container {
+     justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  }
+
+  .nav-left {
+  display: flex;
+  align-items: center;
+}
+
+.menu-toggle {
+  display: block;
+  margin-left: auto;
+}
+
+  .join {
+    position: static;
+    margin-top: 10px;
+    text-align: center;
+  }
+
+  .home {
+    flex-direction: column;
+    align-items: center;
+    min-height: 80vh;
+    padding: 40px 16px 60px;
+  }
+
+  .hero-left {
+    margin-bottom: 40px;
+  }
+
+  .hero-content {
+    align-items: center;
+    text-align: center;
+    width: 100%;
+  }
+
+  .overlay {
+    font-size: 28px;
+    margin-bottom: 20px;
+  }
+
+  .socials {
+    justify-content: center;
+    margin-bottom: 20px;
+    width: 100%;
+  }
+
+  .join-now {
+    display: none;
+  }
+
+  .get-started-btn {
+    width: 100%;
+    text-align: center;
+  }
+
+  .stats {
+    flex-direction: column;
+    gap: 20px;
+    padding: 30px 20px;
+  }
+
+  .why-content,
+  .about-container,
+  .meettrainers {
+    flex-direction: column;
+    gap: 30px;
+  }
+
+  .section-title,
+  .meettrainers-content,
+  .about-text {
+    max-width: 100%;
+    text-align: center;
+    left: 0;
+  }
+
+  .reasons {
+    grid-template-columns: 1fr;
+  }
+
+  .right-images {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .img-small,
+  .img-large,
+  .meettrainers-card img,
+  .about-image img {
+    width: 100%;
+    max-width: 100%;
+    height: auto;
+  }
+
+  .services-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .menu-toggle {
+  display: block;
+}
+
+.nav-container {
+  justify-content: space-between;
+}
+
+.nav-links {
+  position: absolute;
+  top: 100%;
+  left: 0;
+
+  width: 100%;
+
+  background: rgba(0,0,0,0.95);
+
+  flex-direction: column;
+
+  align-items: center;
+
+  gap: 20px;
+
+  padding: 25px 0;
+
+  display: none;
+}
+
+.nav-links.active {
+  display: flex;
+}
+
+@media (max-width: 768px) {
+
+  .opinions-header {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+  }
+
+  .reviews-row {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .review-card {
+    width: 100%;
+    max-width: 400px;
+  }
+
+  .slider-buttons {
+    justify-content: center;
+  }
+
+}
+}
+
+
+@media (max-width: 576px) {
+
+  /* NAVBAR */
+  .navbar {
+    padding: 14px 16px;
+    top:0;
+  }
+
+  .nav-container {
+    gap: 12px;
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+
+  .home {
+    flex-direction: column;
+    align-items: center;
+    padding-top: 160px;
+    padding-left: 20px;
+    padding-right: 20px;
+  }
+
+  .hero-left {
+    margin-bottom: 40px;
+  }
+
+  .hero-content {
+    align-items: center;
+    text-align: center;
+    width: 100%;
+  }
+
+  .overlay {
+    font-size: 24px;
+    margin-bottom: 20px;
+  }
+
+  .socials {
+    justify-content: center;
+    margin-bottom: 20px;
+    width: 100%;
+  }
+
+  .hero-join {
+    display: none;
+  }
+
+  /* STATS */
+  .stats {
+    flex-direction: column;
+    gap: 20px;
+    padding: 20px;
+  }
+
+  /* WHY CHOOSE US */
+  .why-content {
+    flex-direction: column;
+  }
+
+  .section-title {
+    left: 0;
+    max-width: 100%;
+  }
+
+  .reasons {
+    grid-template-columns: 1fr;
+  }
+
+  .right-images {
+    flex-direction: column;
+  }
+
+  /* TRAINERS */
+  .meettrainers {
+    flex-direction: column;
+    gap: 30px;
+    padding: 40px 20px;
+  }
+
+  .meettrainers-content {
+    max-width: 100%;
+    text-align: center;
+  }
+
+  .meettrainers-list {
+    justify-content: center;
+  }
+
+  /* ABOUT */
+  .about-container {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .about-text p {
+    max-width: 100%;
+  }
+
+  /* SERVICES */
+  .services-grid {
+    grid-template-columns: 1fr;
+  }
+}

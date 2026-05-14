@@ -19,7 +19,7 @@ const TopNav = () => {
   const fetchProfileAndSubscription = async () => {
     try {
       const token = localStorage.getItem('token');
-      if (!token) return;
+    if (!token) return;
 
       const res = await axios.get('http://localhost:5000/api/auth/profile', {
         headers: { Authorization: `Bearer ${token}` },
@@ -72,17 +72,17 @@ const TopNav = () => {
   };
 
   fetchProfileAndSubscription();
-}, []);
+  }, []);
 
 
   useEffect(() => {
     const fetchNotifications = async () => {
       try {
-        const token = localStorage.getItem("token");
-        if (!token) return;
+    const token = localStorage.getItem("token");
+    if (!token) return;
 
         const res = await axios.get("http://localhost:5000/api/notifications?role=Trainee", {
-          headers: { Authorization: `Bearer ${token}` },
+        headers: { Authorization: `Bearer ${token}` },
           withCredentials: true,
         });
 
@@ -101,9 +101,9 @@ const TopNav = () => {
     <div className="topnav">
       
       <div className="workout-days">
-       <span className="current-weight">
+        <span className="current-weight">
   Current Weight: <b>{currentWeight !== null ? currentWeight + " kg" : "N/A"}</b>
-</span>
+        </span>
 
         <span className="days-remaining">Days Remaining: <b>{daysRemaining}</b></span>
       </div>
@@ -113,47 +113,27 @@ const TopNav = () => {
           <button className="topnavprofile-btn" onClick={() => {}}>
             {`Welcome, ${traineeName}`}
           </button>
-        </div>
+      </div>
 
          <div className="traineenotification-icon" onClick={() => setShowNotifications(!showNotifications)}>
           <FaBell size={24} />
           {notifications.length > 0 && <span className="traineenotification-badge">{notifications.length}</span>}
         </div>
 
-       {showNotifications && (
-  <div className="traineenotifications-panel">
-    <h4>Notifications</h4>
-    {notifications.length > 0 ? (
-      notifications.slice(0, 5).map((notif, index) => (
-        <div key={index} className="traineenotification-item">
-          <h5>{notif.type}</h5>
-          <p>{notif.message}</p>
-        </div>
-      ))
-    ) : (
-      <p className="traineeno-notifications">No new notifications</p>
-    )}
-    <button
-  className="traineedelete-all-btn"
-  onClick={async () => {
-    try {
-      const token = localStorage.getItem("token");
-      await axios.delete("http://localhost:5000/api/notifications/deletenotifications", {
-        headers: { Authorization: `Bearer ${token}` },
-        withCredentials: true,
-      });
-      setNotifications([]);
-    } catch (error) {
-      console.error("Error deleting notifications:", error);
-    }
-  }}
->
-  Delete All
-</button>
-
-  </div>
-)}
-
+        {showNotifications && (
+          <div className="traineenotifications-panel">
+            <h4>Notifications</h4>
+            {notifications.length ? (
+              notifications.slice(0, 5).map((n, i) => (
+                <div key={i} className="traineenotification-item">
+                  <p>{n.message}</p>
+                </div>
+              ))
+            ) : (
+              <p>No notifications</p>
+            )}
+          </div>
+        )}
       </div>
     </div>
   );

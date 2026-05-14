@@ -166,7 +166,7 @@ const Chat = () => {
                     {trainer.firstName.charAt(0)}{trainer.lastName.charAt(0)}
                   </div>
                   <div className="trainer-info">
-                    <span className="trainer-name">{trainer.firstName} {trainer.lastName}</span>
+                    <span className="trainers-name">{trainer.firstName} {trainer.lastName}</span>
                     <span className="trainer-status">Online</span>
                   </div>
                 </li>

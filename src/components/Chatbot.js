@@ -1,128 +1,291 @@
 import React, { useState, useEffect, useRef } from "react";
-import axios from "axios";
-import { FaRobot } from "react-icons/fa";
+
+import { FaRobot, FaTimes, FaPaperPlane } from "react-icons/fa";
+
 import "./Chatbot.css";
 
 const Chatbot = () => {
   const [isOpen, setIsOpen] = useState(false);
-  const [messages, setMessages] = useState(() => {
-    const saved = localStorage.getItem("chatbotMessages");
-    return saved ? JSON.parse(saved) : [{ sender: "bot", text: "Hello! How can I help you today? 😊" }];
-  });
+
+  const [messages, setMessages] = useState([]);
+
   const [input, setInput] = useState("");
-  const [showDefaults, setShowDefaults] = useState(true);
-  const [isTyping, setIsTyping] = useState(false);
+
+  const [loading, setLoading] = useState(false);
+
   const messageEndRef = useRef(null);
 
-  const defaultMessages = [
-    { text: "What services do you offer?" },
-    { text: "How can I join a gym?" },
-    { text: "What are the pricing plans?" },
+  const quickReplies = [
+    "Membership Plans",
+    "Gym Location",
+    "Workout Tips",
+    "Nutrition",
   ];
 
-  const sendMessage = async (messageText) => {
-    if (!messageText.trim()) return;
-
-    const userMessage = { sender: "user", text: messageText };
-    const updatedMessages = [...messages, userMessage];
-    setMessages(updatedMessages);
-    setInput("");
-    setShowDefaults(false);
-    setIsTyping(true);
-
-    try {
-      const response = await axios.post("http://localhost:5000/api/chat", {
-        message: messageText,
-      });
-
-      const botMessage = {
-        sender: "bot",
-        text: response.data.response ,
-      };
-
-      setTimeout(() => {
-        setMessages((prev) => [...prev, botMessage]);
-        setIsTyping(false);
-      }, 1000);
-    } catch (error) {
-      setMessages((prev) => [
-        ...prev,
-        { sender: "bot", text: "Sorry, something went wrong. 😓" },
-      ]);
-      setIsTyping(false);
-    }
-  };
-
-  const handleInputSend = () => sendMessage(input);
+  // RESET CHAT EVERY OPEN
 
   useEffect(() => {
-    localStorage.setItem("chatbotMessages", JSON.stringify(messages));
+    if (isOpen) {
+      setMessages([
+        {
+          sender: "bot",
+          text: "👋 Welcome to MiloFit Gym! Ask me anything about fitness, nutrition, workouts, or memberships.",
+        },
+      ]);
+    }
+  }, [isOpen]);
+
+  // AUTO SCROLL
+
+  useEffect(() => {
     if (messageEndRef.current) {
-      messageEndRef.current.scrollIntoView({ behavior: "smooth" });
+      messageEndRef.current.scrollIntoView({
+        behavior: "smooth",
+      });
     }
   }, [messages]);
 
-  // Restore quick replies after delay
-  useEffect(() => {
-    if (!showDefaults) {
-      const timer = setTimeout(() => setShowDefaults(true), 20000);
-      return () => clearTimeout(timer);
+  // AI SIMULATION
+
+  const generateBotReply = (message) => {
+    const text = message.toLowerCase();
+
+    // MEMBERSHIP
+
+    if (
+      text.includes("price") ||
+      text.includes("membership") ||
+      text.includes("plan")
+    ) {
+      return `
+💪 We offer flexible membership plans including monthly memberships, personal training, and boxing packages.
+
+Visit MiloFit Gym for detailed pricing and special offers.
+      `;
     }
-  }, [showDefaults]);
+
+    // LOCATION
+
+    if (
+      text.includes("location") ||
+      text.includes("address") ||
+      text.includes("where")
+    ) {
+      return `
+📍 MiloFit Gym is located in Sidi Gabir, Alexandria, Egypt — near the tram station.
+      `;
+    }
+
+    // HOURS
+
+    if (
+      text.includes("open") ||
+      text.includes("time") ||
+      text.includes("hours")
+    ) {
+      return `
+🕒 MiloFit Gym is open daily from 8 AM to 12 AM, including weekends.
+      `;
+    }
+
+    // WORKOUTS
+
+    if (
+      text.includes("workout") ||
+      text.includes("exercise") ||
+      text.includes("training")
+    ) {
+      return `
+🏋️ For best results:
+
+• Train consistently
+• Focus on proper form
+• Combine strength + cardio
+• Sleep well
+• Stay hydrated
+      `;
+    }
+
+    // MUSCLE GAIN
+
+    if (
+      text.includes("muscle") ||
+      text.includes("bulk") ||
+      text.includes("gain")
+    ) {
+      return `
+💥 To build muscle effectively:
+
+• Progressive overload
+• Enough protein
+• Quality sleep
+• Strength training
+• Consistent nutrition
+      `;
+    }
+
+    // WEIGHT LOSS
+
+    if (
+      text.includes("fat") ||
+      text.includes("lose weight") ||
+      text.includes("belly")
+    ) {
+      return `
+🔥 Fat loss requires:
+
+• Calorie deficit
+• Regular cardio
+• Strength workouts
+• Healthy eating
+• Patience and consistency
+      `;
+    }
+
+    // NUTRITION
+
+    if (
+      text.includes("food") ||
+      text.includes("diet") ||
+      text.includes("protein") ||
+      text.includes("nutrition")
+    ) {
+      return `
+🥗 Nutrition Tips:
+
+• Eat more protein
+• Drink enough water
+• Reduce processed sugar
+• Include vegetables daily
+• Stay consistent
+      `;
+    }
+
+    // GREETING
+
+    if (text.includes("hello") || text.includes("hi") || text.includes("hey")) {
+      return `
+👋 Hey! Welcome to MiloFit Gym. How can I help you today?
+      `;
+    }
+
+    // DEFAULT
+
+    return `
+💪 MiloFit Gym is here to help you with:
+
+• Fitness
+• Nutrition
+• Muscle Building
+• Weight Loss
+• Memberships
+• Workout Guidance
+
+Ask me anything!
+    `;
+  };
+
+  const sendMessage = async (text) => {
+    if (!text.trim()) return;
+
+    const userMessage = {
+      sender: "user",
+      text,
+    };
+
+    setMessages((prev) => [...prev, userMessage]);
+
+    setInput("");
+    setLoading(true);
+
+    setTimeout(() => {
+      const botReply = generateBotReply(text);
+
+      const botMessage = {
+        sender: "bot",
+        text: botReply,
+      };
+
+      setMessages((prev) => [...prev, botMessage]);
+
+      setLoading(false);
+    }, 700);
+  };
 
   return (
-    <div>
-      <div className="chatbot-icon" onClick={() => setIsOpen(!isOpen)}>
-        <FaRobot size={40} color="white" />
-      </div>
+    <>
+      {/* TOGGLE BUTTON */}
 
-      {isOpen && (
-        <div className="chatbot-container">
-          <div className="chatbot-header">
-            <span>Milo AI Chat</span>
+      <button
+        className={`chat-toggle ${isOpen ? "active" : ""}`}
+        onClick={() => setIsOpen(!isOpen)}
+      >
+        {isOpen ? <FaTimes /> : <FaRobot />}
+      </button>
+
+      {/* CHATBOT */}
+
+      <div className={`chatbot ${isOpen ? "open" : ""}`}>
+        {/* HEADER */}
+
+        <div className="chat-header">
+          <div className="chat-header-left">
+            <div className="bot-avatar">
+              <FaRobot />
+            </div>
+
+            <div>
+              <h3>MiloFit AI</h3>
+              <p>Online Fitness Assistant</p>
+            </div>
           </div>
+        </div>
 
-          {showDefaults && (
-            <div className="default-messages">
-              {defaultMessages.map((msg, index) => (
-                <button
-                  key={index}
-                  className="default-message-btn"
-                  onClick={() => sendMessage(msg.text)}
-                >
-                  {msg.text}
-                </button>
-              ))}
+        {/* CHAT BODY */}
+
+        <div className="chat-body">
+          {messages.map((msg, index) => (
+            <div key={index} className={`chat-row ${msg.sender}`}>
+              <div className={`chat-message ${msg.sender}`}>{msg.text}</div>
+            </div>
+          ))}
+
+          {loading && (
+            <div className="chat-row bot">
+              <div className="chat-message bot typing">Typing...</div>
             </div>
           )}
 
-          <div className="chatbot-messages">
-            {messages.map((msg, index) => (
-              <div key={index} className={`message ${msg.sender}`}>
-                {msg.text}
-              </div>
-            ))}
-            {isTyping && (
-              <div className="message bot typing-indicator">
-                Bot is typing<span className="dots">...</span>
-              </div>
-            )}
-            <div ref={messageEndRef} />
-          </div>
-
-          <div className="chatbot-input">
-            <input
-              type="text"
-              value={input}
-              onChange={(e) => setInput(e.target.value)}
-              placeholder="Type your message..."
-              onKeyDown={(e) => e.key === "Enter" && handleInputSend()}
-            />
-            <button onClick={handleInputSend}>Send</button>
-          </div>
+          <div ref={messageEndRef} />
         </div>
-      )}
-    </div>
+
+        {/* QUICK REPLIES */}
+
+        <div className="quick-replies">
+          {quickReplies.map((item, index) => (
+            <button key={index} onClick={() => sendMessage(item)}>
+              {item}
+            </button>
+          ))}
+        </div>
+
+        {/* INPUT */}
+
+        <div className="chat-input">
+          <input
+            type="text"
+            placeholder="Ask anything..."
+            value={input}
+            onChange={(e) => setInput(e.target.value)}
+            onKeyDown={(e) => e.key === "Enter" && sendMessage(input)}
+          />
+
+          <button onClick={() => sendMessage(input)}>
+            <FaPaperPlane />
+          </button>
+        </div>
+      </div>
+    </>
   );
 };
 

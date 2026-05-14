@@ -88,7 +88,7 @@ body {
     display: flex;
     flex-direction: column; 
     position: relative;
-    bottom: 100px;
+    bottom: 80px;
     overflow: scroll;
   }
   .scheduleupcoming-box p{
@@ -107,7 +107,7 @@ body {
     min-width: 500px;
     height:200px;
     position: relative;
-    bottom: 100px;
+    bottom: 80px;
   }
   .scheduletime-select{
     display: flex;

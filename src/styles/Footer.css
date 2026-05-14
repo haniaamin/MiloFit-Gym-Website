@@ -1,82 +1,213 @@
 .footer {
-  background-color: black; /* Dark background for modern look */
+  background: #000;
   color: white;
-  padding: 20px 20px;
-  text-align: center;
+  padding: 70px 40px 25px;
   font-family: "Poppins", sans-serif;
-
 }
 
-.footer-banner {
+.footer-container {
+  max-width: 1200px;
+  margin: auto;
+
   display: flex;
-  flex-direction: column;
-  align-items: center;
-  gap: 30px;
-  margin-top: 50px;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: 60px;
 }
 
-/* Call Us Now Section */
-.footer-phone h3 {
+.footer-section {
+  flex: 1;
+}
+
+.footer-section h3 {
   font-size: 22px;
-  font-weight: 600;
-  margin-bottom: 10px;
+  margin-bottom: 20px;
   color: red;
+  position: relative;
 }
 
-.footer-phone p {
-  font-size: 24px;
-  font-weight: bold;
-  color: white;
+.footer-section h3::after {
+  content: "";
+  width: 40px;
+  height: 3px;
+  background: red;
+
+  position: absolute;
+  left: 0;
+  bottom: -8px;
+
+  border-radius: 2px;
 }
 
-/* Address Section */
-.footer-address {
-  max-width: 400px;
-  text-align: center;
-  font-size: 16px;
-  line-height: 1.6;
+.footer-section p {
+  color: #d1d1d1;
+  line-height: 1.8;
+  font-size: 15px;
 }
 
-.footer-address h2 {
-  font-size: 20px;
-  color: red;
-  margin-bottom: 10px;
+.footer-phone-number {
+  font-size: 24px !important;
+  font-weight: 700;
+  color: white !important;
+  margin-bottom: 25px;
 }
-.footer-address p{
- color: white;
-}
-/* Social Media Icons */
+
+/* SOCIALS */
+
 .social-icons {
   display: flex;
-  gap: 20px;
-  justify-content: center;
+  gap: 18px;
+  margin-top: 10px;
 }
 
 .social-icon {
-  font-size: 24px;
+  width: 45px;
+  height: 45px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  background: #111;
+  border: 1px solid #222;
+
+  border-radius: 50%;
+
   color: white;
-  transition: color 0.3s ease;
+  font-size: 18px;
+
+  transition: all 0.3s ease;
+  text-decoration: none;
 }
 
 .social-icon:hover {
-  color: red;
-  transform: scale(1.1);
+  background: red;
+  transform: translateY(-4px);
 }
 
-/* Quick Links */
+/* LINKS */
+
 .footer-links {
-  margin-top: 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
 }
 
 .footer-links a {
-  color: white;
+  color: #d1d1d1;
   text-decoration: none;
-  font-size: 16px;
-  margin: 0 15px;
-  transition: color 0.3s ease;
+  transition: all 0.3s ease;
+  width: fit-content;
 }
 
 .footer-links a:hover {
   color: red;
-  transform: scale(1.1);
+  transform: translateX(5px);
+}
+
+/* BOTTOM */
+
+.footer-bottom {
+  border-top: 1px solid #1f1f1f;
+
+  margin-top: 50px;
+  padding-top: 20px;
+
+  text-align: center;
+}
+
+.footer-bottom p {
+  color: #999;
+  font-size: 14px;
+}
+
+/* =========================
+   TABLET
+========================= */
+
+@media (max-width: 992px) {
+
+  .footer {
+    padding: 60px 25px 20px;
+  }
+
+  .footer-container {
+    gap: 40px;
+  }
+
+}
+
+/* =========================
+   MOBILE
+========================= */
+
+@media (max-width: 768px) {
+
+  .footer {
+    padding: 50px 20px 20px;
+  }
+
+  .footer-container {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+
+    gap: 50px;
+  }
+
+  .footer-section {
+    width: 100%;
+  }
+
+  .footer-section h3::after {
+    left: 50%;
+    transform: translateX(-50%);
+  }
+
+  .social-icons {
+    justify-content: center;
+  }
+
+  .footer-links {
+    align-items: center;
+  }
+
+  .footer-links a:hover {
+    transform: none;
+  }
+
+  .footer-phone-number {
+    font-size: 20px !important;
+  }
+
+}
+
+/* =========================
+   SMALL MOBILE
+========================= */
+
+@media (max-width: 480px) {
+
+  .footer {
+    padding: 45px 16px 18px;
+  }
+
+  .footer-section h3 {
+    font-size: 20px;
+  }
+
+  .footer-section p {
+    font-size: 14px;
+  }
+
+  .social-icon {
+    width: 42px;
+    height: 42px;
+    font-size: 16px;
+  }
+
+  .footer-bottom p {
+    font-size: 13px;
+  }
+
 }
