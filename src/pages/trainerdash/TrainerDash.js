@@ -17,7 +17,7 @@ ChartJS.register(ArcElement, Tooltip, Legend, ChartDataLabels);
 
 const TrainerDash = () => {
   const navigate = useNavigate();
-  const [clients, setClients] = useState([]);
+  const [, setClients] = useState([]);
   const [pieData, setPieData] = useState(null);
   const [trainer, setTrainer] = useState(null); // 👈 Add trainer state
 

@@ -10,7 +10,7 @@ import axios from 'axios';
 const TrainerProgress = () => {
   const [newGoal, setNewGoal] = useState('');
   const [latestGoal, setLatestGoal] = useState(null);
-  const [monthlyTotals, setMonthlyTotals] = useState({ clients: 0, sessions: 0 });
+  const [, setMonthlyTotals] = useState({ clients: 0, sessions: 0 });
   const [monthlyChartData, setMonthlyChartData] = useState([]);
 
   const fetchGoal = async () => {
@@ -110,9 +110,10 @@ const TrainerProgress = () => {
     }
   };
 
-  useEffect(() => {
-    buildMonthlyChart();
-  }, [latestGoal]); // re-check goal whenever it's updated
+ useEffect(() => {
+  buildMonthlyChart();
+  // eslint-disable-next-line react-hooks/exhaustive-deps
+}, [latestGoal]); // re-check goal whenever it's updated
 
   return (
     <div className="trainer-dash">

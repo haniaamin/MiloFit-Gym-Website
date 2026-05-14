@@ -27,7 +27,7 @@ const ClientManagement = () => {
       }
     };
     fetchClients();
-  }, []);
+  }, [trainerEmail]);
 
   const isValidPhone = (phone) => /^\d{11}$/.test(phone);
 

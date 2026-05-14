@@ -2,7 +2,7 @@ import '../../styles/TrainerSettings.css';
 import TrainerSidebar from '../../components/TrainerSidebar';
 import TrainerNav from '../../components/TrainerNav';
 import React, { useState, useEffect } from 'react';
-import { FaCamera, FaSignOutAlt, FaQuestionCircle } from 'react-icons/fa';
+import { FaCamera, FaSignOutAlt } from 'react-icons/fa';
 import { useNavigate } from 'react-router-dom';
 import axios from 'axios';
 
