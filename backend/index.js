@@ -19,7 +19,7 @@ const server = http.createServer(app);
 // =========================
 const allowedOrigins = [
   "http://localhost:3000",
-  "https://milo-fit-gym-website-git-main-haniamohamed2002-1416s-projects.vercel.app",
+  "https://milo-fit-gym-website.vercel.app",
 ];
 
 // =========================
