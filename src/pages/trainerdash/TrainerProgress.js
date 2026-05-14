@@ -15,7 +15,7 @@ const TrainerProgress = () => {
 
   const fetchGoal = async () => {
     try {
-      const res = await fetch(`http://localhost:5000/api/trainer/goals`);
+      const res = await fetch(`https://milofit-gym-website.onrender.com/api/trainer/goals`);
       const data = await res.json();
       if (data.length > 0) setLatestGoal(data[0]);
     } catch (err) {
@@ -34,7 +34,7 @@ const TrainerProgress = () => {
 
     try {
       const user = JSON.parse(localStorage.getItem('user'));
-      const res = await fetch('http://localhost:5000/api/trainer/save-goal', {
+      const res = await fetch('https://milofit-gym-website.onrender.com/api/trainer/save-goal', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({ goal: parseInt(newGoal), email: user?.email })
@@ -61,8 +61,8 @@ const TrainerProgress = () => {
 
     try {
       const [clientsRes, sessionsRes] = await Promise.all([
-        axios.get(`http://localhost:5000/api/trainee/list?trainerEmail=${trainerEmail}`),
-        axios.get(`http://localhost:5000/api/sessions?trainerEmail=${trainerEmail}`)
+        axios.get(`https://milofit-gym-website.onrender.com/api/trainee/list?trainerEmail=${trainerEmail}`),
+        axios.get(`https://milofit-gym-website.onrender.com/api/sessions?trainerEmail=${trainerEmail}`)
       ]);
 
       const clients = clientsRes.data;

@@ -38,7 +38,7 @@ const CompleteProfileTrainer = () => {
             }
     
             // Step 1: Send profile details
-            const profileResponse = await fetch("http://localhost:5000/api/trainer/complete-profile-trainer", {
+            const profileResponse = await fetch("https://milofit-gym-website.onrender.com/api/trainer/complete-profile-trainer", {
                 method: "POST",
                 headers: { "Content-Type": "application/json" },
                 body: JSON.stringify({ email, ...formData })
@@ -55,7 +55,7 @@ const CompleteProfileTrainer = () => {
                 formDataUpload.append("profilePicture", formData.profilePicture);
                 formDataUpload.append("email", email);
     
-                const uploadResponse = await fetch("http://localhost:5000/api/trainer/profile-picture", {
+                const uploadResponse = await fetch("https://milofit-gym-website.onrender.com/api/trainer/profile-picture", {
                     method: "POST",
                     body: formDataUpload
                 });
@@ -67,7 +67,7 @@ const CompleteProfileTrainer = () => {
             }
     
             // Step 3: Final submission
-            const finalResponse = await fetch("http://localhost:5000/api/trainer/final-submit", {
+            const finalResponse = await fetch("https://milofit-gym-website.onrender.com/api/trainer/final-submit", {
                 method: "POST",
                 headers: { "Content-Type": "application/json" },
                 body: JSON.stringify({ email })

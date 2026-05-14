@@ -49,7 +49,7 @@ export default function Opinions() {
 
     axios
       .get(
-        "http://localhost:5000/api/feedback/get-feedback"
+        "https://milofit-gym-website.onrender.com/api/feedback/get-feedback"
       )
       .then((res) => {
 
@@ -124,7 +124,7 @@ export default function Opinions() {
 
     axios
       .post(
-        "http://localhost:5000/api/feedback/add-feedback",
+        "https://milofit-gym-website.onrender.com/api/feedback/add-feedback",
         newFeedback
       )
       .then(() => {

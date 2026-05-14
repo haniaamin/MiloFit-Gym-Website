@@ -17,7 +17,7 @@ const BillingManagement = () => {
     const fetchInvoices = async () => {
       try {
         const token = localStorage.getItem('token');
-        const res = await axios.get('http://localhost:5000/api/admin/subscription/subscribe', {
+        const res = await axios.get('https://milofit-gym-website.onrender.com/api/admin/subscription/subscribe', {
           headers: { Authorization: `Bearer ${token}` },
         });
 

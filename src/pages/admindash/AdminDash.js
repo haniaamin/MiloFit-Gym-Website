@@ -19,7 +19,7 @@ const AdminDash = () => {
   useEffect(() => {
     const fetchStats = async () => {
       try {
-        const response = await axios.get("http://localhost:5000/api/admin/dashboard-stats");
+        const response = await axios.get("https://milofit-gym-website.onrender.com/api/admin/dashboard-stats");
         setStats(response.data);
       } catch (error) {
         console.error("Error fetching admin dashboard stats:", error);
@@ -34,7 +34,7 @@ const AdminDash = () => {
           const token = localStorage.getItem("token");
           if (!token) return;
   
-          const response = await axios.get("http://localhost:5000/api/auth/profile", {
+          const response = await axios.get("https://milofit-gym-website.onrender.com/api/auth/profile", {
             headers: { Authorization: `Bearer ${token}` },
             withCredentials: true,
           });
@@ -48,7 +48,7 @@ const AdminDash = () => {
       const fetchUserCount = async () => {
         try {
           const token = localStorage.getItem("token");
-          const response = await axios.get("http://localhost:5000/api/admin/user-count", {
+          const response = await axios.get("https://milofit-gym-website.onrender.com/api/admin/user-count", {
             headers: { Authorization: `Bearer ${token}` },
           });
           setUserCount(response.data.count);

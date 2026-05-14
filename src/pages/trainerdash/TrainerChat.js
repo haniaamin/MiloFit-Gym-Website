@@ -5,7 +5,7 @@ import TrainerSidebar from '../../components/TrainerSidebar';
 import TrainerNav from '../../components/TrainerNav';
 import axios from 'axios';
 
-const socket = io('http://localhost:5000');
+const socket = io('https://milofit-gym-website.onrender.com');
 
 const TrainerChat = () => {
   const [trainees, setTrainees] = useState([]);
@@ -23,7 +23,7 @@ const TrainerChat = () => {
     const fetchUser = async () => {
       try {
         const token = localStorage.getItem('token');
-        const res = await axios.get('http://localhost:5000/api/auth/profile', {
+        const res = await axios.get('https://milofit-gym-website.onrender.com/api/auth/profile', {
           headers: { Authorization: `Bearer ${token}` },
         });
         setCurrentUser(res.data);
@@ -37,7 +37,7 @@ const TrainerChat = () => {
 
   // Fetch trainees list
   useEffect(() => {
-    fetch('http://localhost:5000/api/chats/trainees')
+    fetch('https://milofit-gym-website.onrender.com/api/chats/trainees')
       .then(res => res.json())
       .then(data => setTrainees(data))
       .catch(console.error);
@@ -47,7 +47,7 @@ const TrainerChat = () => {
   useEffect(() => {
     if (!selectedTrainee || !currentUser) return;
 
-    fetch('http://localhost:5000/api/chats/conversation', {
+    fetch('https://milofit-gym-website.onrender.com/api/chats/conversation', {
       method: 'POST',
       headers: { 'Content-Type': 'application/json' },
       body: JSON.stringify({
@@ -72,7 +72,7 @@ const TrainerChat = () => {
     messageIdsRef.current.clear();
     setMessages([]);  // Clear all messages before fetching fresh ones
 
-    fetch(`http://localhost:5000/api/chats/messages/${selectedConversation}`)
+    fetch(`https://milofit-gym-website.onrender.com/api/chats/messages/${selectedConversation}`)
       .then(res => res.json())
       .then(data => {
         data.forEach(msg => messageIdsRef.current.add(msg._id));
@@ -119,7 +119,7 @@ const TrainerChat = () => {
     setNewMessage('');
 
     try {
-      const response = await fetch('http://localhost:5000/api/chats/message', {
+      const response = await fetch('https://milofit-gym-website.onrender.com/api/chats/message', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({

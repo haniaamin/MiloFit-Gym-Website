@@ -13,7 +13,7 @@ const Packages = () => {
   useEffect(() => {
     const fetchPackages = async () => {
       try {
-        const res = await fetch('http://localhost:5000/api/packages');
+        const res = await fetch('https://milofit-gym-website.onrender.com/api/packages');
         const data = await res.json();
         setPackages(data);
       } catch (err) {
@@ -40,7 +40,7 @@ const Packages = () => {
 
   const handleSaveNew = async () => {
     try {
-      const res = await fetch('http://localhost:5000/api/packages/add', {
+      const res = await fetch('https://milofit-gym-website.onrender.com/api/packages/add', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify(newRow),
@@ -73,7 +73,7 @@ const Packages = () => {
 
   const handleSaveEdit = async () => {
     try {
-      const res = await fetch(`http://localhost:5000/api/packages/update/${editedPackage._id}`, {
+      const res = await fetch(`https://milofit-gym-website.onrender.com/api/packages/update/${editedPackage._id}`, {
         method: 'PUT',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify(editedPackage),
@@ -103,7 +103,7 @@ const Packages = () => {
   const handleDelete = async (index) => {
     const pkg = packages[index];
     try {
-      await fetch(`http://localhost:5000/api/packages/delete/${pkg._id}`, {
+      await fetch(`https://milofit-gym-website.onrender.com/api/packages/delete/${pkg._id}`, {
         method: 'DELETE',
       });
       setPackages(prev => prev.filter((_, i) => i !== index));

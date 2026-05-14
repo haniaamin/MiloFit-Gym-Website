@@ -31,7 +31,7 @@ const TraineeProgress = () => {
         const token = localStorage.getItem('token');
         if (!token) return;
 
-        const res = await axios.get('http://localhost:5000/api/auth/profile', {
+        const res = await axios.get('https://milofit-gym-website.onrender.com/api/auth/profile', {
           headers: { Authorization: `Bearer ${token}` },
           withCredentials: true,
         });

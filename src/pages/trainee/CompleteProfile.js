@@ -29,7 +29,7 @@ const CompleteProfile = () => {
                 return;
             }
 
-            const response = await fetch("http://localhost:5000/api/trainee/complete-profile", {
+            const response = await fetch("https://milofit-gym-website.onrender.com/api/trainee/complete-profile", {
                 method: "POST",
                 headers: { "Content-Type": "application/json" },
                 body: JSON.stringify({ email, ...formData }) // Send email + profile data

@@ -6,7 +6,7 @@ import axios from "axios";
 import { useNavigate } from "react-router-dom"; // For navigation
 import { FaEllipsisV } from "react-icons/fa"; // Three-dot icon
 
-const API_URL = "http://localhost:5000/api/admin"; // Backend API
+const API_URL = "https://milofit-gym-website.onrender.com/api/admin"; // Backend API
 
 const UserManagement = () => {
   const [users, setUsers] = useState([]);

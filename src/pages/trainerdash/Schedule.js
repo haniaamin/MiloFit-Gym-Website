@@ -26,7 +26,7 @@ const Schedule = () => {
   // Fetch trainees from backend API
   const fetchTrainees = async () => {
     try {
-      const res = await axios.get('http://localhost:5000/api/trainees');
+      const res = await axios.get('https://milofit-gym-website.onrender.com/api/trainees');
       setTrainees(res.data);
     } catch (error) {
       console.error('Failed to fetch trainees');
@@ -36,7 +36,7 @@ const Schedule = () => {
   // Fetch sessions from backend API
   const fetchSessions = async () => {
     try {
-      const res = await axios.get('http://localhost:5000/api/sessions');
+      const res = await axios.get('https://milofit-gym-website.onrender.com/api/sessions');
       setSessions(res.data);
       // Count upcoming sessions only (date in future or today)
       const today = new Date();
@@ -74,7 +74,7 @@ const Schedule = () => {
         month: Number(newSession.month),
         year: Number(newSession.year),
       };
-      const res = await axios.post('http://localhost:5000/api/sessions', payload);
+      const res = await axios.post('https://milofit-gym-website.onrender.com/api/sessions', payload);
       alert(res.data.message || 'Session added successfully');
       setNewSession({
         trainee: '',
@@ -96,7 +96,7 @@ const Schedule = () => {
       return;
     }
     try {
-      await axios.delete(`http://localhost:5000/api/sessions/${selectedSessionId}`);
+      await axios.delete(`https://milofit-gym-website.onrender.com/api/sessions/${selectedSessionId}`);
       alert('Session cancelled successfully!');
       setSelectedSessionId('');
       fetchSessions();
@@ -119,7 +119,7 @@ const Schedule = () => {
         hour: Number(editSession.hour),
         timezone: editSession.timezone,
       };
-      await axios.put(`http://localhost:5000/api/sessions/${selectedSessionId}`, payload);
+      await axios.put(`https://milofit-gym-website.onrender.com/api/sessions/${selectedSessionId}`, payload);
       alert('Session updated successfully!');
       setSelectedSessionId('');
       setEditSession({ hour: '', timezone: 'AM' });

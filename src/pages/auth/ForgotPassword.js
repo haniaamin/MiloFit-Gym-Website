@@ -12,7 +12,7 @@ const ForgotPassword = () => {
     const handleSubmit = async (e) => {
         e.preventDefault();
         try {
-            await axios.post("http://localhost:5000/api/auth/forgot-password", { email });
+            await axios.post("https://milofit-gym-website.onrender.com/api/auth/forgot-password", { email });
             navigate("/email-verification", { state: { email } });
         } catch (error) {
             setMessage(error.response?.data?.message || "Error sending OTP");

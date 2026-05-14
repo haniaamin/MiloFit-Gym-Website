@@ -56,7 +56,7 @@ const NotificationsManagement = () => {
         return;
       }
 
-      await axios.post("http://localhost:5000/api/notifications", notification, {
+      await axios.post("https://milofit-gym-website.onrender.com/api/notifications", notification, {
         headers: { Authorization: `Bearer ${token}` },
         withCredentials: true,
       });

@@ -65,7 +65,7 @@ const Analytics = () => {
 useEffect(() => {
   const fetchStats = async () => {
     try {
-      const response = await axios.get("http://localhost:5000/api/admin/dashboard-stats");
+      const response = await axios.get("https://milofit-gym-website.onrender.com/api/admin/dashboard-stats");
       setStats(response.data);
 
       // Dynamically append to the line chart with timestamp
@@ -99,7 +99,7 @@ useEffect(() => {
         const token = localStorage.getItem("token");
         if (!token) return;
 
-        const response = await axios.get("http://localhost:5000/api/auth/profile", {
+        const response = await axios.get("https://milofit-gym-website.onrender.com/api/auth/profile", {
           headers: { Authorization: `Bearer ${token}` },
           withCredentials: true,
         });
@@ -113,7 +113,7 @@ useEffect(() => {
     const fetchUserCount = async () => {
       try {
         const token = localStorage.getItem("token");
-        const response = await axios.get("http://localhost:5000/api/admin/user-count", {
+        const response = await axios.get("https://milofit-gym-website.onrender.com/api/admin/user-count", {
           headers: { Authorization: `Bearer ${token}` },
         });
         setUserCount(response.data.count);
@@ -125,7 +125,7 @@ useEffect(() => {
     const fetchUserRoleCounts = async () => {
       try {
         const token = localStorage.getItem("token");
-        const response = await axios.get("http://localhost:5000/api/admin/user-role-counts", {
+        const response = await axios.get("https://milofit-gym-website.onrender.com/api/admin/user-role-counts", {
           headers: { Authorization: `Bearer ${token}` },
         });
         const { trainee, trainer } = response.data;

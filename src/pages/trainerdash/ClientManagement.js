@@ -19,7 +19,7 @@ const ClientManagement = () => {
   useEffect(() => {
     const fetchClients = async () => {
       try {
-        const res = await fetch(`http://localhost:5000/api/trainee/list?trainerEmail=${trainerEmail}`);
+        const res = await fetch(`https://milofit-gym-website.onrender.com/api/trainee/list?trainerEmail=${trainerEmail}`);
         const data = await res.json();
         setClients(data); // ✅ Load only from backend
       } catch (err) {
@@ -51,7 +51,7 @@ const ClientManagement = () => {
     }
     const traineeToSave = { ...newTrainee, trainerEmail }; // ✅ Include trainer email
     try {
-      const res = await fetch("http://localhost:5000/api/trainee/add", {
+      const res = await fetch("https://milofit-gym-website.onrender.com/api/trainee/add", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify(traineeToSave)
@@ -77,7 +77,7 @@ const ClientManagement = () => {
     const trainee = clients[index];
     if (trainee._id) {
       try {
-        await fetch(`http://localhost:5000/api/trainee/remove/${trainee._id}`, {
+        await fetch(`https://milofit-gym-website.onrender.com/api/trainee/remove/${trainee._id}`, {
           method: "DELETE"
         });
         setClients(prev => prev.filter((_, i) => i !== index));
@@ -102,7 +102,7 @@ const ClientManagement = () => {
     }
 
     try {
-      const res = await fetch(`http://localhost:5000/api/trainee/update/${trainee._id}`, {
+      const res = await fetch(`https://milofit-gym-website.onrender.com/api/trainee/update/${trainee._id}`, {
         method: 'PUT',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify(trainee)

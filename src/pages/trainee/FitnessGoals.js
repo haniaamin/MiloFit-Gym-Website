@@ -25,7 +25,7 @@ const FitnessGoals = () => {
                 return;
             }
 
-            const response = await fetch("http://localhost:5000/api/trainee/fitness-goals", {
+            const response = await fetch("https://milofit-gym-website.onrender.com/api/trainee/fitness-goals", {
                 method: "POST",
                 headers: {
                     "Content-Type": "application/json"

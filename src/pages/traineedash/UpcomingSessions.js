@@ -27,7 +27,7 @@ const UpcomingSessions = () => {
   useEffect(() => {
     const fetchTrainers = async () => {
       try {
-        const response = await axios.get('http://localhost:5000/api/trainers');
+        const response = await axios.get('https://milofit-gym-website.onrender.com/api/trainers');
         setTrainers(response.data);
         if (response.data.length > 0) {
           const fullName = `${response.data[0].firstName} ${response.data[0].lastName}`;
@@ -47,7 +47,7 @@ const UpcomingSessions = () => {
     const fetchSessions = async () => {
       try {
         const response = await axios.get(
-          `http://localhost:5000/api/sessions?trainerFirstName=${firstName}&trainerLastName=${lastName}`
+          `https://milofit-gym-website.onrender.com/api/sessions?trainerFirstName=${firstName}&trainerLastName=${lastName}`
         );
         setPersonalSessions(response.data);
         if (response.data.length > 0) {
@@ -66,7 +66,7 @@ const UpcomingSessions = () => {
   useEffect(() => {
     const fetchScheduled = async () => {
       try {
-        const res = await axios.get(`http://localhost:5000/api/class-bookings`);
+        const res = await axios.get(`https://milofit-gym-website.onrender.com/api/class-bookings`);
         setScheduledClasses(res.data);
       } catch (err) {
         console.error('Failed to load scheduled classes', err);
@@ -84,7 +84,7 @@ const UpcomingSessions = () => {
     };
 
     try {
-      const res = await axios.post('http://localhost:5000/api/class-bookings', data);
+      const res = await axios.post('https://milofit-gym-website.onrender.com/api/class-bookings', data);
       setScheduledClasses([...scheduledClasses, res.data]);
       alert('Class scheduled!');
     } catch (err) {
@@ -95,7 +95,7 @@ const UpcomingSessions = () => {
 
   const handleCancel = async (id) => {
     try {
-      await axios.delete(`http://localhost:5000/api/class-bookings/${id}`);
+      await axios.delete(`https://milofit-gym-website.onrender.com/api/class-bookings/${id}`);
       setScheduledClasses(scheduledClasses.filter((s) => s._id !== id));
     } catch (err) {
       console.error('Cancel failed', err);
@@ -104,7 +104,7 @@ const UpcomingSessions = () => {
 
   const handleReschedule = async (id, newTime) => {
     try {
-      const res = await axios.put(`http://localhost:5000/api/class-bookings/${id}`, { time: newTime });
+      const res = await axios.put(`https://milofit-gym-website.onrender.com/api/class-bookings/${id}`, { time: newTime });
       setScheduledClasses(scheduledClasses.map((c) => (c._id === id ? res.data : c)));
     } catch (err) {
       console.error('Reschedule failed', err);

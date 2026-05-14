@@ -15,7 +15,7 @@ const EmailVerification = () => {
         e.preventDefault();
         try {
             console.log(`Verifying OTP: ${otp} for email: ${email}`); // Debugging
-            await axios.post("http://localhost:5000/api/auth/verify-otp", { email, otp });
+            await axios.post("https://milofit-gym-website.onrender.com/api/auth/verify-otp", { email, otp });
             navigate("/reset-password", { state: { email } });
         } catch (error) {
             console.error("OTP Verification Error:", error.response?.data || error.message);

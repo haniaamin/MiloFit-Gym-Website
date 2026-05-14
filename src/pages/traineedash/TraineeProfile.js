@@ -62,7 +62,7 @@ useEffect(() => {
         if (!token) return;
 
         // Step 1: Get logged-in user's ID
-        const res = await axios.get('http://localhost:5000/api/auth/profile', {
+        const res = await axios.get('https://milofit-gym-website.onrender.com/api/auth/profile', {
           headers: { Authorization: `Bearer ${token}` },
         });
 
@@ -70,7 +70,7 @@ useEffect(() => {
         setUserId(fetchedUserId);
 
         // Step 2: Get user's subscription
-        const subRes = await axios.get(`http://localhost:5000/api/subscriptions/${fetchedUserId}`);
+        const subRes = await axios.get(`https://milofit-gym-website.onrender.com/api/subscriptions/${fetchedUserId}`);
         setMembership(subRes.data);
       } catch (err) {
         console.error('Error fetching user or subscription:', err);
@@ -87,7 +87,7 @@ useEffect(() => {
         const token = localStorage.getItem('token');
         if (!token) return;
 
-        const res = await axios.get('http://localhost:5000/api/auth/profile', {
+        const res = await axios.get('https://milofit-gym-website.onrender.com/api/auth/profile', {
           headers: { Authorization: `Bearer ${token}` },
           withCredentials: true,
         });

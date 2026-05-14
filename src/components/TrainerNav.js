@@ -18,7 +18,7 @@ const TrainerNav = () => {
         const token = localStorage.getItem("token");
         if (!token) return;
 
-        const res = await axios.get("http://localhost:5000/api/auth/profile", {
+        const res = await axios.get("https://milofit-gym-website.onrender.com/api/auth/profile", {
           headers: { Authorization: `Bearer ${token}` },
           withCredentials: true,
         });
@@ -41,11 +41,11 @@ const TrainerNav = () => {
         if (!trainerEmail) return;
 
         // Fetch clients for this trainer
-        const clientsRes = await axios.get(`http://localhost:5000/api/trainee/list?trainerEmail=${trainerEmail}`);
+        const clientsRes = await axios.get(`https://milofit-gym-website.onrender.com/api/trainee/list?trainerEmail=${trainerEmail}`);
         setClientCount(clientsRes.data.length);
 
         // Fetch sessions and filter only for this trainer by trainerEmail
-        const sessionsRes = await axios.get(`http://localhost:5000/api/sessions?trainerEmail=${trainerEmail}`);
+        const sessionsRes = await axios.get(`https://milofit-gym-website.onrender.com/api/sessions?trainerEmail=${trainerEmail}`);
         const now = new Date();
 
         // Filter upcoming sessions (date > now)
@@ -69,7 +69,7 @@ const TrainerNav = () => {
         const token = localStorage.getItem("token");
         if (!token) return;
 
-        const res = await axios.get("http://localhost:5000/api/notifications?role=Trainer", {
+        const res = await axios.get("https://milofit-gym-website.onrender.com/api/notifications?role=Trainer", {
           headers: { Authorization: `Bearer ${token}` },
           withCredentials: true,
         });
@@ -122,7 +122,7 @@ const TrainerNav = () => {
               onClick={async () => {
                 try {
                   const token = localStorage.getItem("token");
-                  await axios.delete("http://localhost:5000/api/notifications/deletenotifications", {
+                  await axios.delete("https://milofit-gym-website.onrender.com/api/notifications/deletenotifications", {
                     headers: { Authorization: `Bearer ${token}` },
                     withCredentials: true,
                   });

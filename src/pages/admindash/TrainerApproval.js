@@ -13,7 +13,7 @@ const TrainerApproval = () => {
 
   const fetchTrainers = async () => {
     try {
-      const res = await axios.get("http://localhost:5000/api/admin/users");
+      const res = await axios.get("https://milofit-gym-website.onrender.com/api/admin/users");
       const pendingTrainers = res.data.filter(
         (user) => user.role === "trainer" && user.status === "pending"
       );
@@ -31,7 +31,7 @@ const TrainerApproval = () => {
 
   const handleApproveReject = async (trainerId, action) => {
     try {
-      await axios.put(`http://localhost:5000/api/admin/users/${trainerId}/approve`, { status: action });
+      await axios.put(`https://milofit-gym-website.onrender.com/api/admin/users/${trainerId}/approve`, { status: action });
       setTrainers((prev) => prev.filter((trainer) => trainer._id !== trainerId));
     } catch (error) {
       console.error(`Failed to ${action} trainer:`, error.response?.data || error.message);

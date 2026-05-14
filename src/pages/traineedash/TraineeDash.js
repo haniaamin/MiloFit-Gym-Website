@@ -38,7 +38,7 @@ const TraineeDash = () => {
         const token = localStorage.getItem('token');
         if (!token) return;
 
-        const res = await axios.get('http://localhost:5000/api/auth/profile', {
+        const res = await axios.get('https://milofit-gym-website.onrender.com/api/auth/profile', {
           headers: { Authorization: `Bearer ${token}` },
           withCredentials: true,
         });
@@ -47,7 +47,7 @@ const TraineeDash = () => {
         setUser(fetchedUser);
 
         // Fetch subscription from backend
-        const subRes = await axios.get(`http://localhost:5000/api/admin/subscriptions/${fetchedUser._id}`);
+        const subRes = await axios.get(`https://milofit-gym-website.onrender.com/api/admin/subscriptions/${fetchedUser._id}`);
         const subscription = subRes.data;
 
         if (subscription?.startDate) {

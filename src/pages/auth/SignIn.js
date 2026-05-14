@@ -18,7 +18,7 @@ const SignIn = () => {
     setError("");
 
     try {
-      const response = await axios.post("http://localhost:5000/api/auth/login", { email, password });
+      const response = await axios.post("https://milofit-gym-website.onrender.com/api/auth/login", { email, password });
 
       // Store token and user data in local storage
       localStorage.setItem("token", response.data.token);
